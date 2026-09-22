@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "lead": {
+    "id": "uuid",
+    "clinic_name": "string",
+    "contact_name": "string|null",
+    "phone": "string|null",
+    "whatsapp": "string|null",
+    "email": "string|null",
+    "source": "landing|whatsapp|meta|referral|manual",
+    "stage": "new|qualified|offer_sent|payment_pending|paid|case_active|closed_lost",
+    "notes": "string|null",
+    "created_at": "iso8601",
+    "updated_at": "iso8601"
+  }
+}
