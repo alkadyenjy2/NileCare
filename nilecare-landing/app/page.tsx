@@ -1,3 +1,5 @@
+import ContactForm from "./ContactForm";
+
 export default function Home() {
   return (
     <main>
@@ -15,6 +17,7 @@ export default function Home() {
       <section id="contact" className="contact">
         <h2>Start with a real clinic offer</h2>
         <p>NileCare does not publish invented pricing or unsupported claims.</p>
+        <ContactForm />
       </section>
     </main>
   );
