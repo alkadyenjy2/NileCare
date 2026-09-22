@@ -16,3 +16,15 @@ create table if not exists public.payment_events (
  id uuid primary key default gen_random_uuid(), lead_id uuid references public.leads(id), provider text not null,
  provider_event_id text not null unique, status text not null, payload jsonb not null default '{}', created_at timestamptz not null default now()
 );
+
+alter table public.leads enable row level security;
+alter table public.lead_events enable row level security;
+alter table public.payment_events enable row level security;
+
+revoke all on public.leads from anon, authenticated;
+revoke all on public.lead_events from anon, authenticated;
+revoke all on public.payment_events from anon, authenticated;
+
+comment on table public.leads is 'NileCare lead registry. Access is deny-by-default until production auth/RLS policies are explicitly bound.';
+comment on table public.lead_events is 'NileCare idempotent operational event log.';
+comment on table public.payment_events is 'NileCare payment provider event log; provider_event_id is idempotent.';

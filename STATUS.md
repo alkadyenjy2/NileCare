@@ -1,21 +1,29 @@
-# NileCare Execution Status
+# NileCare — Final Execution Status
 
-## Evidence-backed complete
-- Local project scaffold exists at C:\\Users\\LTC\\NileCare.
-- Landing app source exists.
-- npm install completed with 0 vulnerabilities.
-- npx next build completed with exit code 0.
-- CRM schema, automation boundary, WhatsApp contract and Supabase migration drafted.
-- Four legal templates drafted and explicitly marked for legal review.
+## Verified in this execution
+- GitHub `main` is synchronized with the local project before this execution.
+- Next.js production build: PASS (Next.js 16.3.5, exit code 0).
+- TypeScript check: PASS (exit code 0).
+- Repository self-check: PASS.
+- Lead API behavioral test: invalid payload ? HTTP 400; valid lead ? HTTP 503 with explicit `BLOCKED_PERSISTENCE_NOT_CONFIGURED` (no fake persistence).
+- Supabase migration contains unique event idempotency constraints and RLS enabled with deny-by-default grants.
+- CI workflow added for build + self-check.
+- No secrets added to source control.
 
-## Evidence-backed blocked
-- Original NileCare handoff/assets not found locally.
-- No NileCare repository found under GitHub account alkadyenjy2.
-- 80 approved posts/images unavailable.
-- No verified clinic pricing offer.
-- No verified WhatsApp API credentials.
-- No verified Paymob payment link/configuration.
-- Correct Meta Page/Instagram identity unavailable.
+## Closed implementation scope
+Everything that can be implemented or verified without external production credentials/assets is now implemented. The remaining items are external provisioning blockers, not hidden code tasks.
 
-## Safety
-Nothing in this scaffold claims a real clinic, payment, Meta connection, WhatsApp connection, patient case, or approved content bank exists.
+## External blockers
+- Original approved 80 posts/images.
+- Original brand kit.
+- Real clinic pricing offer.
+- WhatsApp Cloud API credentials/configuration.
+- Paymob merchant/payment configuration/link.
+- Verified NileCare Meta Page/Instagram identity and credentials.
+- Real Supabase project + production auth binding.
+
+## Safety / integrity
+- No old Meta Page IDs were reused.
+- No fake patient/case/clinic/payment data.
+- Legal documents remain templates and require legal review.
+- Production publishing remains gated on real evidence.
