@@ -1,0 +1,647 @@
+{
+  "version": 1,
+  "expected_count": 80,
+  "status": "DRAFT_NOT_APPROVED",
+  "posts": [
+    {
+      "id": "draft-01",
+      "category": "Clinic Coordination",
+      "caption": "من أول سؤال لحد متابعة الحالة، NileCare بتنظم رحلة التنسيق مع العيادة في مسار واضح. ",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-02",
+      "category": "Patient Journey",
+      "caption": "تجربة المريض تبدأ من أول تواصل. خلّي خطوات التنسيق أوضح وأسهل. ",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, patient journey, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-03",
+      "category": "Appointment Flow",
+      "caption": "مواعيد واضحة، معلومات مرتبة، وتسليم منظم للخطوة التالية. ",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, appointment flow, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-04",
+      "category": "Clinic Operations",
+      "caption": "تنظيم التواصل يقلل الرسائل المكررة ويخلي كل حالة لها مسار واضح. ",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic operations, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-05",
+      "category": "Transparency",
+      "caption": "قبل أي خطوة: الخدمة، النطاق، والتكلفة لازم يكونوا واضحين. ",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, transparency, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-06",
+      "category": "Follow-up",
+      "caption": "المتابعة مش رسالة وخلاص؛ هي تسجيل للخطوة التالية ودليل على ما تم. ",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, follow-up, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-07",
+      "category": "Trust",
+      "caption": "الثقة تبدأ من معلومات واضحة ومسار يمكن متابعته. ",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, trust, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-08",
+      "category": "Coordination",
+      "caption": "NileCare تركّز على التنسيق بين المريض والجهة الطبية، بدون وعود غير مؤكدة. ",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-09",
+      "category": "Healthcare Access",
+      "caption": "لما المعلومات تكون مرتبة، الوصول للخطوة المناسبة يبقى أبسط. ",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, healthcare access, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-10",
+      "category": "FAQ",
+      "caption": "عندك سؤال عن طريقة التنسيق؟ ابدأ بالمعلومة الأساسية، وبعدها نحدد الخطوة التالية. ",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, faq, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-11",
+      "category": "Clinic Coordination",
+      "caption": "من أول سؤال لحد متابعة الحالة، NileCare بتنظم رحلة التنسيق مع العيادة في مسار واضح. — محتوى توعوي 2 / منشور 11.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-12",
+      "category": "Patient Journey",
+      "caption": "تجربة المريض تبدأ من أول تواصل. خلّي خطوات التنسيق أوضح وأسهل. — محتوى توعوي 2 / منشور 12.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, patient journey, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-13",
+      "category": "Appointment Flow",
+      "caption": "مواعيد واضحة، معلومات مرتبة، وتسليم منظم للخطوة التالية. — محتوى توعوي 2 / منشور 13.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, appointment flow, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-14",
+      "category": "Clinic Operations",
+      "caption": "تنظيم التواصل يقلل الرسائل المكررة ويخلي كل حالة لها مسار واضح. — محتوى توعوي 2 / منشور 14.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic operations, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-15",
+      "category": "Transparency",
+      "caption": "قبل أي خطوة: الخدمة، النطاق، والتكلفة لازم يكونوا واضحين. — محتوى توعوي 2 / منشور 15.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, transparency, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-16",
+      "category": "Follow-up",
+      "caption": "المتابعة مش رسالة وخلاص؛ هي تسجيل للخطوة التالية ودليل على ما تم. — محتوى توعوي 2 / منشور 16.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, follow-up, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-17",
+      "category": "Trust",
+      "caption": "الثقة تبدأ من معلومات واضحة ومسار يمكن متابعته. — محتوى توعوي 2 / منشور 17.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, trust, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-18",
+      "category": "Coordination",
+      "caption": "NileCare تركّز على التنسيق بين المريض والجهة الطبية، بدون وعود غير مؤكدة. — محتوى توعوي 2 / منشور 18.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-19",
+      "category": "Healthcare Access",
+      "caption": "لما المعلومات تكون مرتبة، الوصول للخطوة المناسبة يبقى أبسط. — محتوى توعوي 2 / منشور 19.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, healthcare access, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-20",
+      "category": "FAQ",
+      "caption": "عندك سؤال عن طريقة التنسيق؟ ابدأ بالمعلومة الأساسية، وبعدها نحدد الخطوة التالية. — محتوى توعوي 2 / منشور 20.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, faq, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-21",
+      "category": "Clinic Coordination",
+      "caption": "من أول سؤال لحد متابعة الحالة، NileCare بتنظم رحلة التنسيق مع العيادة في مسار واضح. — محتوى توعوي 3 / منشور 21.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-22",
+      "category": "Patient Journey",
+      "caption": "تجربة المريض تبدأ من أول تواصل. خلّي خطوات التنسيق أوضح وأسهل. — محتوى توعوي 3 / منشور 22.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, patient journey, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-23",
+      "category": "Appointment Flow",
+      "caption": "مواعيد واضحة، معلومات مرتبة، وتسليم منظم للخطوة التالية. — محتوى توعوي 3 / منشور 23.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, appointment flow, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-24",
+      "category": "Clinic Operations",
+      "caption": "تنظيم التواصل يقلل الرسائل المكررة ويخلي كل حالة لها مسار واضح. — محتوى توعوي 3 / منشور 24.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic operations, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-25",
+      "category": "Transparency",
+      "caption": "قبل أي خطوة: الخدمة، النطاق، والتكلفة لازم يكونوا واضحين. — محتوى توعوي 3 / منشور 25.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, transparency, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-26",
+      "category": "Follow-up",
+      "caption": "المتابعة مش رسالة وخلاص؛ هي تسجيل للخطوة التالية ودليل على ما تم. — محتوى توعوي 3 / منشور 26.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, follow-up, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-27",
+      "category": "Trust",
+      "caption": "الثقة تبدأ من معلومات واضحة ومسار يمكن متابعته. — محتوى توعوي 3 / منشور 27.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, trust, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-28",
+      "category": "Coordination",
+      "caption": "NileCare تركّز على التنسيق بين المريض والجهة الطبية، بدون وعود غير مؤكدة. — محتوى توعوي 3 / منشور 28.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-29",
+      "category": "Healthcare Access",
+      "caption": "لما المعلومات تكون مرتبة، الوصول للخطوة المناسبة يبقى أبسط. — محتوى توعوي 3 / منشور 29.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, healthcare access, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-30",
+      "category": "FAQ",
+      "caption": "عندك سؤال عن طريقة التنسيق؟ ابدأ بالمعلومة الأساسية، وبعدها نحدد الخطوة التالية. — محتوى توعوي 3 / منشور 30.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, faq, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-31",
+      "category": "Clinic Coordination",
+      "caption": "من أول سؤال لحد متابعة الحالة، NileCare بتنظم رحلة التنسيق مع العيادة في مسار واضح. — محتوى توعوي 4 / منشور 31.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-32",
+      "category": "Patient Journey",
+      "caption": "تجربة المريض تبدأ من أول تواصل. خلّي خطوات التنسيق أوضح وأسهل. — محتوى توعوي 4 / منشور 32.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, patient journey, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-33",
+      "category": "Appointment Flow",
+      "caption": "مواعيد واضحة، معلومات مرتبة، وتسليم منظم للخطوة التالية. — محتوى توعوي 4 / منشور 33.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, appointment flow, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-34",
+      "category": "Clinic Operations",
+      "caption": "تنظيم التواصل يقلل الرسائل المكررة ويخلي كل حالة لها مسار واضح. — محتوى توعوي 4 / منشور 34.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic operations, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-35",
+      "category": "Transparency",
+      "caption": "قبل أي خطوة: الخدمة، النطاق، والتكلفة لازم يكونوا واضحين. — محتوى توعوي 4 / منشور 35.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, transparency, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-36",
+      "category": "Follow-up",
+      "caption": "المتابعة مش رسالة وخلاص؛ هي تسجيل للخطوة التالية ودليل على ما تم. — محتوى توعوي 4 / منشور 36.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, follow-up, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-37",
+      "category": "Trust",
+      "caption": "الثقة تبدأ من معلومات واضحة ومسار يمكن متابعته. — محتوى توعوي 4 / منشور 37.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, trust, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-38",
+      "category": "Coordination",
+      "caption": "NileCare تركّز على التنسيق بين المريض والجهة الطبية، بدون وعود غير مؤكدة. — محتوى توعوي 4 / منشور 38.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-39",
+      "category": "Healthcare Access",
+      "caption": "لما المعلومات تكون مرتبة، الوصول للخطوة المناسبة يبقى أبسط. — محتوى توعوي 4 / منشور 39.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, healthcare access, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-40",
+      "category": "FAQ",
+      "caption": "عندك سؤال عن طريقة التنسيق؟ ابدأ بالمعلومة الأساسية، وبعدها نحدد الخطوة التالية. — محتوى توعوي 4 / منشور 40.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, faq, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-41",
+      "category": "Clinic Coordination",
+      "caption": "من أول سؤال لحد متابعة الحالة، NileCare بتنظم رحلة التنسيق مع العيادة في مسار واضح. — محتوى توعوي 5 / منشور 41.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-42",
+      "category": "Patient Journey",
+      "caption": "تجربة المريض تبدأ من أول تواصل. خلّي خطوات التنسيق أوضح وأسهل. — محتوى توعوي 5 / منشور 42.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, patient journey, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-43",
+      "category": "Appointment Flow",
+      "caption": "مواعيد واضحة، معلومات مرتبة، وتسليم منظم للخطوة التالية. — محتوى توعوي 5 / منشور 43.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, appointment flow, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-44",
+      "category": "Clinic Operations",
+      "caption": "تنظيم التواصل يقلل الرسائل المكررة ويخلي كل حالة لها مسار واضح. — محتوى توعوي 5 / منشور 44.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic operations, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-45",
+      "category": "Transparency",
+      "caption": "قبل أي خطوة: الخدمة، النطاق، والتكلفة لازم يكونوا واضحين. — محتوى توعوي 5 / منشور 45.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, transparency, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-46",
+      "category": "Follow-up",
+      "caption": "المتابعة مش رسالة وخلاص؛ هي تسجيل للخطوة التالية ودليل على ما تم. — محتوى توعوي 5 / منشور 46.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, follow-up, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-47",
+      "category": "Trust",
+      "caption": "الثقة تبدأ من معلومات واضحة ومسار يمكن متابعته. — محتوى توعوي 5 / منشور 47.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, trust, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-48",
+      "category": "Coordination",
+      "caption": "NileCare تركّز على التنسيق بين المريض والجهة الطبية، بدون وعود غير مؤكدة. — محتوى توعوي 5 / منشور 48.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-49",
+      "category": "Healthcare Access",
+      "caption": "لما المعلومات تكون مرتبة، الوصول للخطوة المناسبة يبقى أبسط. — محتوى توعوي 5 / منشور 49.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, healthcare access, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-50",
+      "category": "FAQ",
+      "caption": "عندك سؤال عن طريقة التنسيق؟ ابدأ بالمعلومة الأساسية، وبعدها نحدد الخطوة التالية. — محتوى توعوي 5 / منشور 50.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, faq, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-51",
+      "category": "Clinic Coordination",
+      "caption": "من أول سؤال لحد متابعة الحالة، NileCare بتنظم رحلة التنسيق مع العيادة في مسار واضح. — محتوى توعوي 6 / منشور 51.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-52",
+      "category": "Patient Journey",
+      "caption": "تجربة المريض تبدأ من أول تواصل. خلّي خطوات التنسيق أوضح وأسهل. — محتوى توعوي 6 / منشور 52.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, patient journey, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-53",
+      "category": "Appointment Flow",
+      "caption": "مواعيد واضحة، معلومات مرتبة، وتسليم منظم للخطوة التالية. — محتوى توعوي 6 / منشور 53.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, appointment flow, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-54",
+      "category": "Clinic Operations",
+      "caption": "تنظيم التواصل يقلل الرسائل المكررة ويخلي كل حالة لها مسار واضح. — محتوى توعوي 6 / منشور 54.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic operations, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-55",
+      "category": "Transparency",
+      "caption": "قبل أي خطوة: الخدمة، النطاق، والتكلفة لازم يكونوا واضحين. — محتوى توعوي 6 / منشور 55.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, transparency, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-56",
+      "category": "Follow-up",
+      "caption": "المتابعة مش رسالة وخلاص؛ هي تسجيل للخطوة التالية ودليل على ما تم. — محتوى توعوي 6 / منشور 56.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, follow-up, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-57",
+      "category": "Trust",
+      "caption": "الثقة تبدأ من معلومات واضحة ومسار يمكن متابعته. — محتوى توعوي 6 / منشور 57.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, trust, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-58",
+      "category": "Coordination",
+      "caption": "NileCare تركّز على التنسيق بين المريض والجهة الطبية، بدون وعود غير مؤكدة. — محتوى توعوي 6 / منشور 58.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-59",
+      "category": "Healthcare Access",
+      "caption": "لما المعلومات تكون مرتبة، الوصول للخطوة المناسبة يبقى أبسط. — محتوى توعوي 6 / منشور 59.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, healthcare access, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-60",
+      "category": "FAQ",
+      "caption": "عندك سؤال عن طريقة التنسيق؟ ابدأ بالمعلومة الأساسية، وبعدها نحدد الخطوة التالية. — محتوى توعوي 6 / منشور 60.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, faq, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-61",
+      "category": "Clinic Coordination",
+      "caption": "من أول سؤال لحد متابعة الحالة، NileCare بتنظم رحلة التنسيق مع العيادة في مسار واضح. — محتوى توعوي 7 / منشور 61.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-62",
+      "category": "Patient Journey",
+      "caption": "تجربة المريض تبدأ من أول تواصل. خلّي خطوات التنسيق أوضح وأسهل. — محتوى توعوي 7 / منشور 62.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, patient journey, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-63",
+      "category": "Appointment Flow",
+      "caption": "مواعيد واضحة، معلومات مرتبة، وتسليم منظم للخطوة التالية. — محتوى توعوي 7 / منشور 63.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, appointment flow, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-64",
+      "category": "Clinic Operations",
+      "caption": "تنظيم التواصل يقلل الرسائل المكررة ويخلي كل حالة لها مسار واضح. — محتوى توعوي 7 / منشور 64.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic operations, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-65",
+      "category": "Transparency",
+      "caption": "قبل أي خطوة: الخدمة، النطاق، والتكلفة لازم يكونوا واضحين. — محتوى توعوي 7 / منشور 65.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, transparency, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-66",
+      "category": "Follow-up",
+      "caption": "المتابعة مش رسالة وخلاص؛ هي تسجيل للخطوة التالية ودليل على ما تم. — محتوى توعوي 7 / منشور 66.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, follow-up, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-67",
+      "category": "Trust",
+      "caption": "الثقة تبدأ من معلومات واضحة ومسار يمكن متابعته. — محتوى توعوي 7 / منشور 67.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, trust, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-68",
+      "category": "Coordination",
+      "caption": "NileCare تركّز على التنسيق بين المريض والجهة الطبية، بدون وعود غير مؤكدة. — محتوى توعوي 7 / منشور 68.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-69",
+      "category": "Healthcare Access",
+      "caption": "لما المعلومات تكون مرتبة، الوصول للخطوة المناسبة يبقى أبسط. — محتوى توعوي 7 / منشور 69.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, healthcare access, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-70",
+      "category": "FAQ",
+      "caption": "عندك سؤال عن طريقة التنسيق؟ ابدأ بالمعلومة الأساسية، وبعدها نحدد الخطوة التالية. — محتوى توعوي 7 / منشور 70.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, faq, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-71",
+      "category": "Clinic Coordination",
+      "caption": "من أول سؤال لحد متابعة الحالة، NileCare بتنظم رحلة التنسيق مع العيادة في مسار واضح. — محتوى توعوي 8 / منشور 71.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-72",
+      "category": "Patient Journey",
+      "caption": "تجربة المريض تبدأ من أول تواصل. خلّي خطوات التنسيق أوضح وأسهل. — محتوى توعوي 8 / منشور 72.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, patient journey, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-73",
+      "category": "Appointment Flow",
+      "caption": "مواعيد واضحة، معلومات مرتبة، وتسليم منظم للخطوة التالية. — محتوى توعوي 8 / منشور 73.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, appointment flow, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-74",
+      "category": "Clinic Operations",
+      "caption": "تنظيم التواصل يقلل الرسائل المكررة ويخلي كل حالة لها مسار واضح. — محتوى توعوي 8 / منشور 74.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, clinic operations, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-75",
+      "category": "Transparency",
+      "caption": "قبل أي خطوة: الخدمة، النطاق، والتكلفة لازم يكونوا واضحين. — محتوى توعوي 8 / منشور 75.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, transparency, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-76",
+      "category": "Follow-up",
+      "caption": "المتابعة مش رسالة وخلاص؛ هي تسجيل للخطوة التالية ودليل على ما تم. — محتوى توعوي 8 / منشور 76.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, follow-up, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-77",
+      "category": "Trust",
+      "caption": "الثقة تبدأ من معلومات واضحة ومسار يمكن متابعته. — محتوى توعوي 8 / منشور 77.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, trust, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-78",
+      "category": "Coordination",
+      "caption": "NileCare تركّز على التنسيق بين المريض والجهة الطبية، بدون وعود غير مؤكدة. — محتوى توعوي 8 / منشور 78.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, coordination, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-79",
+      "category": "Healthcare Access",
+      "caption": "لما المعلومات تكون مرتبة، الوصول للخطوة المناسبة يبقى أبسط. — محتوى توعوي 8 / منشور 79.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, healthcare access, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    },
+    {
+      "id": "draft-80",
+      "category": "FAQ",
+      "caption": "عندك سؤال عن طريقة التنسيق؟ ابدأ بالمعلومة الأساسية، وبعدها نحدد الخطوة التالية. — محتوى توعوي 8 / منشور 80.",
+      "image_prompt": "NileCare healthcare coordination social post, clean professional medical aesthetic, faq, no fake clinic logo, no patient faces, no medical claims, Arabic-friendly layout, square 1:1",
+      "status": "DRAFT",
+      "approved": false
+    }
+  ]
+}
