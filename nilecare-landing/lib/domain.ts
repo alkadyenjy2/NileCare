@@ -8,7 +8,7 @@ export function canTransition(from:Stage,to:Stage,context?:{provider_evidence_id
  if(to==="closed_lost"&&!context?.loss_reason?.trim())return false;
  return true;
 }
-export type LeadInput={clinic_name:string;contact_name?:string|null;phone?:string|null;whatsapp?:string|null;email?:string|null;source:"landing"|"whatsapp"|"meta"|"referral"|"manual"};
+export type LeadInput={clinic_name:string;contact_name:string|null;phone:string|null;whatsapp:string|null;email:string|null;source:"landing"|"whatsapp"|"meta"|"referral"|"manual"};
 export function validateLead(input:unknown):{ok:true;value:LeadInput}|{ok:false;errors:string[]}{
  if(!input||typeof input!=="object")return{ok:false,errors:["body must be an object"]};
  const x=input as Record<string,unknown>,errors:string[]=[];
