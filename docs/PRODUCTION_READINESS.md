@@ -11,6 +11,9 @@ The repository now has a deterministic lead domain, validation boundary, API con
 - Meta: the correct NileCare Page/Instagram identity and credentials are missing.
 - Supabase: a real production project and authenticated access policy are missing.
 
+## Webhook-first event model
+`lead_events.lead_id` is nullable because provider webhooks can arrive before a CRM lead is resolved. The event remains idempotent via `(event_type, external_id)` and can be associated to a lead later.
+
 ## Operational gates
 1. Verify identity before any Meta action.
 2. Verify provider credentials before any WhatsApp/payment action.
