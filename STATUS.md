@@ -26,4 +26,4 @@ Canonical repository: https://github.com/alkadyenjy2/NileCare
 - Production deployment access.
 
 ## Evidence rule
-Build/test/deployment claims require fresh execution evidence. GitHub currently exposes no status entries for the latest commits, so repository presence is verified but CI execution is not independently verified here.
+Build/test/deployment claims require fresh execution evidence. The latest main commit `b8285b4` has a successful GitHub Actions run (`35816819022`) covering typecheck, build, test suite, and self-check. This verifies repository gates only; external provider and production deployment gates remain blocked above.

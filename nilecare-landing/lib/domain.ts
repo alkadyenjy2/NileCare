@@ -3,6 +3,7 @@ export type Stage=(typeof STAGES)[number];
 const ALLOWED:Record<Stage,readonly Stage[]>={new:["qualified","closed_lost"],qualified:["offer_sent","closed_lost"],offer_sent:["payment_pending","closed_lost"],payment_pending:["paid","closed_lost"],paid:["case_active","closed_lost"],case_active:["closed_lost"],closed_lost:[]};
 export function isStage(value:unknown):value is Stage{return typeof value==="string"&&(STAGES as readonly string[]).includes(value)}
 export function canTransition(from:Stage,to:Stage,context?:{provider_evidence_id?:string|null;loss_reason?:string|null}):boolean{
+ if(!isStage(from)||!isStage(to))return false;
  if(from===to)return true;if(!ALLOWED[from].includes(to))return false;
  if(to==="paid"&&!context?.provider_evidence_id)return false;
  if(to==="closed_lost"&&!context?.loss_reason?.trim())return false;
