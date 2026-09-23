@@ -46,3 +46,6 @@ These cannot be truthfully fabricated:
 ## Verification rule
 
 No provider integration is marked connected without real behavioral evidence from that provider. No fake clinic, patient, payment, testimonial, pricing, Meta identity, or approved content is committed.
+
+## CI verification note
+Neon provider changes must pass the same repository CI gates before being treated as verified.
