@@ -1,0 +1,16 @@
+{
+  "status": "PROVISIONAL_NOT_OFFICIAL",
+  "publish_allowed": false,
+  "name": "NileCare",
+  "palette": {
+    "ink": "#123B4A",
+    "teal": "#1E8A8A",
+    "sand": "#F5F1E8",
+    "white": "#FFFFFF"
+  },
+  "typography": {
+    "heading": "Inter",
+    "body": "Inter"
+  },
+  "usage": "Provisional system only. Replace with approved logo/assets before production publishing."
+}
