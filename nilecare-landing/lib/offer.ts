@@ -1,6 +1,6 @@
 export const SUPPORTED_CURRENCIES = ["EGP","USD","EUR","GBP","SAR","AED"] as const;
 export type Currency=(typeof SUPPORTED_CURRENCIES)[number];
-export type ClinicOffer={clinic_name:string;service:string;price:number;currency:Currency;included:string[];excluded?:string[];delivery_time:string;refund_policy:string;approved:boolean};
+export type ClinicOffer={clinic_name:string;service:string;price:number;currency:Currency;included:string[];excluded:string[];delivery_time:string;refund_policy:string;approved:boolean};
 export function validateOffer(input:unknown):{ok:true;value:ClinicOffer}|{ok:false;errors:string[]}{
  if(!input||typeof input!=="object")return{ok:false,errors:["body must be an object"]};
  const x=input as Record<string,unknown>,e:string[]=[];
