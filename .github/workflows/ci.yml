@@ -1,15 +1,23 @@
 name: NileCare CI
 on:
-  push: {branches: [main]}
-  pull_request: {branches: [main]}
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    defaults: {run: {working-directory: nilecare-landing}}
+    defaults:
+      run:
+        working-directory: nilecare-landing
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: {node-version: 22, cache: npm, cache-dependency-path: nilecare-landing/package-lock.json}
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: nilecare-landing/package-lock.json
       - run: npm ci
       - run: npx tsc --noEmit
       - run: npm run build
