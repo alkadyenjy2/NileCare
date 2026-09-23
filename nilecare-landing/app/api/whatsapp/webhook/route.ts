@@ -8,7 +8,9 @@ export async function GET(request:Request){
 export async function POST(request:Request){
  const raw=await request.text(),sig=request.headers.get("x-hub-signature-256")??"";
  if(!verifyWhatsAppSignature(raw,sig))return NextResponse.json({ok:false,status:"INVALID_WHATSAPP_SIGNATURE"},{status:401});
- const body=JSON.parse(raw) as Record<string,unknown>,message=(body.entry as any)?.[0]?.changes?.[0]?.value?.messages?.[0],eventId=String(message?.id??"");
+ let body:Record<string,unknown>;
+ try{body=JSON.parse(raw) as Record<string,unknown>;}catch{return NextResponse.json({ok:false,status:"INVALID_WHATSAPP_JSON"},{status:400});}
+ const message=(body.entry as any)?.[0]?.changes?.[0]?.value?.messages?.[0],eventId=String(message?.id??"");
  if(!eventId)return NextResponse.json({ok:true,ignored:true,status:"NO_MESSAGE_EVENT"});
  const phone=message?.from?String(message.from):null;
  const stored=await recordWhatsAppMessage({provider_message_id:eventId,direction:"inbound",phone,payload:body});
