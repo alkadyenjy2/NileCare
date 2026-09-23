@@ -7,7 +7,7 @@ create table if not exists public.leads (
 );
 
 create table if not exists public.lead_events (
- id uuid primary key default gen_random_uuid(), lead_id uuid not null references public.leads(id) on delete cascade,
+ id uuid primary key default gen_random_uuid(), lead_id uuid references public.leads(id) on delete cascade,
  event_type text not null, external_id text, payload jsonb not null default '{}', created_at timestamptz not null default now(),
  unique(event_type, external_id)
 );
