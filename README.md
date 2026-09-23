@@ -27,7 +27,7 @@ To use Neon PostgreSQL instead, configure:
 - `NILECARE_PERSISTENCE_PROVIDER=neon`
 - `DATABASE_URL=<Neon PostgreSQL connection string>`
 
-The Neon adapter uses Neon's SQL-over-HTTP endpoint directly with `fetch`; it does not add an npm dependency. Neon documents SQL-over-HTTP for serverless/edge environments and the `https://<host>/sql` endpoint pattern. citeturn2search0turn0search0
+The Neon adapter uses Neon's SQL-over-HTTP endpoint directly with `fetch`; it does not add an npm dependency. Neon documents SQL-over-HTTP for serverless/edge environments and the `https://<host>/sql` endpoint pattern.
 
 The database schema remains PostgreSQL-compatible, so the existing `supabase/001_nilecare_core.sql` and `supabase/002_production_hardening.sql` migrations are the schema source and must be applied to the real Neon database before production use.
 
