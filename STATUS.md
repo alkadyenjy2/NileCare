@@ -17,9 +17,9 @@ Canonical repository: https://github.com/alkadyenjy2/NileCare
 - Runtime hardening: invalid stage values are rejected safely; lead-form network failures become actionable errors; malformed WhatsApp JSON returns a controlled 400.
 
 ## Fresh execution evidence
-- main head: 7886a11.
+- main head: a1a0103.
 - Local verification after the latest SQL hardening changes: NILECARE_TEST_SUITE=29/29 PASS, NILECARE_SELF_CHECK=PASS, NO_FAKE_POSTS=PASS, IDEMPOTENCY_CONSTRAINT=PASS, DOMAIN_VALIDATION_SOURCE_PRESENT=PASS, NEON_PROVIDER_SOURCE_PRESENT=PASS, PROVIDER_SELECTION_SOURCE_PRESENT=PASS, and git diff --check.
-- GitHub Actions Neon bootstrap run 36083378041 completed successfully.
+- GitHub Actions Neon bootstrap run 36083378041 completed successfully. GitHub Actions NileCare CI run 36083697369 for the current pre-documentation head also completed successfully.
 - That run verified the existing Neon credentials/project, resolved the production connection without exposing the URI, verified database connectivity, applied both NileCare schema migrations, and verified the expected production tables.
 - The Neon provider is now the selected production PostgreSQL path. Supabase is not required for production.
 - Vercel project nilecare was created and a fresh Next.js deployment completed successfully as a technical/staging deployment: https://nilecare-psi.vercel.app.
