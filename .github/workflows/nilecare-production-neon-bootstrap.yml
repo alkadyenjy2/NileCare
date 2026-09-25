@@ -1,0 +1,64 @@
+name: NileCare Production Neon Bootstrap
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    env:
+      NEON_API_KEY: ${{ secrets.NEON_API_KEY }}
+      NEON_PROJECT_ID: ${{ vars.NEON_PROJECT_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate Neon configuration without exposing secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${NEON_API_KEY}" || { echo "NEON_API_KEY_MISSING"; exit 1; }
+          test -n "${NEON_PROJECT_ID}" || { echo "NEON_PROJECT_ID_MISSING"; exit 1; }
+          echo "NEON_CONFIGURATION=AVAILABLE"
+
+      - name: Resolve production connection URI
+        shell: bash
+        run: |
+          set -euo pipefail
+          response="$(curl -fsS --retry 3 --retry-all-errors \
+            -H "Authorization: Bearer ${NEON_API_KEY}" \
+            -H "Accept: application/json" \
+            "https://console.neon.tech/api/v2/projects/${NEON_PROJECT_ID}/connection_uri?database_name=neondb&role_name=neondb_owner")"
+          uri="$(printf '%s' "${response}" | jq -r '.uri // empty')"
+          test -n "${uri}" || { echo "NEON_CONNECTION_URI_UNAVAILABLE"; exit 1; }
+          echo "::add-mask::${uri}"
+          printf 'DATABASE_URL=%s\n' "${uri}" >> "${GITHUB_ENV}"
+          echo "NEON_CONNECTION_URI=RESOLVED"
+
+      - name: Verify database connectivity
+        shell: bash
+        run: |
+          set -euo pipefail
+          result="$(psql "${DATABASE_URL}" -v ON_ERROR_STOP=1 -Atc "select current_database() || ':' || current_schema()")"
+          test -n "${result}" || { echo "NEON_DATABASE_QUERY_FAILED"; exit 1; }
+          echo "NEON_DATABASE_CONNECTIVITY=PASS"
+
+      - name: Apply NileCare schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          psql "${DATABASE_URL}" -v ON_ERROR_STOP=1 -f supabase/001_nilecare_core.sql
+          psql "${DATABASE_URL}" -v ON_ERROR_STOP=1 -f supabase/002_production_hardening.sql
+          echo "NILECARE_SCHEMA_APPLY=PASS"
+
+      - name: Verify NileCare schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          tables="$(psql "${DATABASE_URL}" -v ON_ERROR_STOP=1 -Atc "select string_agg(table_name, ',' order by table_name) from information_schema.tables where table_schema='public' and table_name in ('leads','lead_events','payment_events','clinic_offers','whatsapp_messages')")"
+          expected="clinic_offers,lead_events,leads,payment_events,whatsapp_messages"
+          test "${tables}" = "${expected}" || { echo "NILECARE_SCHEMA_VERIFY=FAIL"; exit 1; }
+          echo "NILECARE_SCHEMA_VERIFY=PASS"
