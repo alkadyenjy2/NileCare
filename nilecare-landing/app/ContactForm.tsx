@@ -9,12 +9,16 @@ export default function ContactForm() {
     setState("sending");
     const form = new FormData(event.currentTarget);
     const payload = Object.fromEntries(form.entries());
-    const response = await fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    setState(response.ok ? "sent" : "error");
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      setState(response.ok ? "sent" : "error");
+    } catch {
+      setState("error");
+    }
   }
   return (
     <form className="lead-form" onSubmit={submit}>
