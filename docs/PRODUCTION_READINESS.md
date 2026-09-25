@@ -9,7 +9,7 @@ The repository now has a deterministic lead domain, validation boundary, API con
 - WhatsApp: provider credentials and verified number are missing.
 - Paymob: merchant/payment configuration is missing.
 - Meta: the correct NileCare Page/Instagram identity and credentials are missing.
-- Supabase: a real production project and authenticated access policy are missing.
+- Database: Neon is now the selected production PostgreSQL provider. A real Neon project is reachable through the existing GitHub Actions credentials, and the NileCare schema was applied and verified there. Supabase is no longer a required production dependency; the connected Supabase account is at its two-project free limit, so creating a third project would require deleting/pausing another project or upgrading.
 
 ## Webhook-first event model
 `lead_events.lead_id` is nullable because provider webhooks can arrive before a CRM lead is resolved. The event remains idempotent via `(event_type, external_id)` and can be associated to a lead later.
