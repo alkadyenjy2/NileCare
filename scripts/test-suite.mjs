@@ -11,7 +11,7 @@ const checks=[
  /validateLead/,/canTransition/,/closed_lost/,/provider_evidence_id/,/validateOffer/,/approved/,/PAYMOB_HMAC_SECRET/,/sha512/,
  /verifyWhatsAppSignature/,/WEBHOOK_VERIFY_TOKEN/,/179969831856298/,/NileCare/,/clinic_offers/,/whatsapp_messages/,
  /row level security/i,/provider_event_id/,/npm ci/,/npm run build/,/self-check/,/npx tsc/,/PAYMOB_HMAC_SECRET/,/WHATSAPP_APP_SECRET/,
- /Neon-Connection-String/,/NILECARE_PERSISTENCE_PROVIDER/,/lead_id uuid references public.leads\(id\)/,/isStage\\(from\\)/,/try/,/catch/,/INVALID_WHATSAPP_JSON/
+ /Neon-Connection-String/,/NILECARE_PERSISTENCE_PROVIDER/,/lead_id uuid references public.leads\(id\)/,/isStage\(from\)/,/try/,/catch/,/INVALID_WHATSAPP_JSON/
 ];
 const values=[d,d,d,d,o,o,p,p,w,w,m,m,s,s,s,s,ci,ci,ci,ci,p,w,n,sp,sql,d,c,c,wr];
 checks.forEach((re,i)=>assert.match(values[i],re,"check "+(i+1)+" failed"));
