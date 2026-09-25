@@ -20,5 +20,14 @@ drop trigger if exists clinic_offers_updated_at on public.clinic_offers;
 create trigger clinic_offers_updated_at before update on public.clinic_offers for each row execute function public.set_updated_at();
 alter table public.clinic_offers enable row level security;
 alter table public.whatsapp_messages enable row level security;
-revoke all on public.clinic_offers from anon,authenticated;
-revoke all on public.whatsapp_messages from anon,authenticated;
+do $$
+declare
+  r text;
+begin
+  foreach r in array['anon','authenticated'] loop
+    if exists(select 1 from pg_roles where rolname=r) then
+      execute format('revoke all on public.clinic_offers from %I', r);
+      execute format('revoke all on public.whatsapp_messages from %I', r);
+    end if;
+  end loop;
+end $$;
