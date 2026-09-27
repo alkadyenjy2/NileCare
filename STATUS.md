@@ -2,14 +2,15 @@
 
 ## Repository
 Canonical repository: https://github.com/alkadyenjy2/NileCare
-Current main head: 041593c5a0a0e075de79a35ab697fa0dc7dfe272.
+Last code-bearing verified head: 1faf0ae8e146bfe493ee368ce3312514dc3abdb0.
+The current branch contains documentation-only refreshes after that verified code state.
 
 ## Fresh engineering evidence
-- GitHub Actions NileCare CI run #78 (36337506796) completed successfully on the current main head.
+- GitHub Actions NileCare CI run #79 (36337572058) completed successfully on code-bearing head `1faf0ae8e146bfe493ee368ce3312514dc3abdb0`.
 - CI job `verify` completed successfully.
 - CI verified `npm ci`, TypeScript compilation, Next.js build, the repository test suite, and the self-check.
 - Repository test suite: 32/32.
-- Security hardening on the current head covers Meta identity verification, Paymob configuration detection and lead input length bounds.
+- Security hardening covers Meta identity verification, Paymob configuration detection and lead input length bounds.
 - Neon is the default production persistence provider; Supabase is used only when explicitly selected.
 - Real Neon connectivity/schema application was previously verified through the dedicated production bootstrap workflow.
 - Paymob checkout callback URLs are derived from the incoming request origin.
@@ -42,14 +43,8 @@ Current main head: 041593c5a0a0e075de79a35ab697fa0dc7dfe272.
 7. Commercial production hosting/account access.
 8. Production secrets and final domain binding.
 
-## Decision
-1. Keep Neon as production PostgreSQL.
-2. Keep production activation fail-closed until the external gates above are provisioned and behaviorally verified.
-3. Do not fabricate commercial terms, identities, credentials, brand assets, patient data, testimonials, pricing, or approved content.
-4. Do not spend scarce/paid resources merely to bypass an external provisioning gate.
-
 ## Definition of closed
-The repository-side engineering track is closed for the currently available inputs. Production activation is not claimed until the external gates are provisioned and behaviorally verified.
+Repository-side engineering is closed for the currently available inputs. Production activation is not claimed until the external gates are provisioned and behaviorally verified.
 
 ## Evidence rule
-No “done”, “connected”, “deployed to production”, or provider “success” claim is valid without fresh execution evidence from the relevant system.
+No provider or production state is marked successful without fresh evidence from the relevant system.
