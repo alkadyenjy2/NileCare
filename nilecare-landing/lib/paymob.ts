@@ -17,7 +17,7 @@ export function verifyPaymobHmac(payload:unknown,providedHmac:string){
 }
 
 export function isPaymobConfigured(){
- return Boolean(process.env.PAYMOB_HMAC_SECRET&&process.env.PAYMOB_INTEGRATION_ID&&(process.env.PAYMOB_SECRET_KEY||process.env.PAYMOB_API_KEY));
+ return Boolean(process.env.PAYMOB_HMAC_SECRET&&process.env.PAYMOB_INTEGRATION_ID&&process.env.PAYMOB_SECRET_KEY);
 }
 
 type IntentionInput={
