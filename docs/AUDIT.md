@@ -2,7 +2,7 @@
 
 ## Audit scope
 Canonical repository: alkadyenjy2/NileCare.
-Audit refreshed against main head `ea73d13cf2b608768ffe082e701b421a275fc355`.
+Audit refreshed against main head `041593c5a0a0e075de79a35ab697fa0dc7dfe272` and CI run #78 (`36337506796`).
 
 ## Verified repository state
 - Canonical branch: `main`.
@@ -10,7 +10,7 @@ Audit refreshed against main head `ea73d13cf2b608768ffe082e701b421a275fc355`.
 - No open GitHub issues.
 - No open GitHub pull requests.
 - Repository tree contains the Next.js landing app, deterministic CRM/domain layer, Neon/Supabase persistence adapters, Paymob and WhatsApp webhook boundaries, Meta identity guard, content/brand gates, legal templates, CI and Neon bootstrap workflows.
-- Latest CI for the current head is run #76 (`36337458468`) and completed successfully.
+- CI run #78 (`36337506796`) completed successfully on the current head.
 - CI executed dependency installation, TypeScript compilation, Next.js build, repository test suite and self-check.
 - Repository test suite remains 32/32; self-check passes in CI.
 - The latest security changes harden Meta identity verification, Paymob configuration detection and lead input length bounds.

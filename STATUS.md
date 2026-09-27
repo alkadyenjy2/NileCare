@@ -2,10 +2,10 @@
 
 ## Repository
 Canonical repository: https://github.com/alkadyenjy2/NileCare
-Current main head: ea73d13cf2b608768ffe082e701b421a275fc355.
+Current main head: 041593c5a0a0e075de79a35ab697fa0dc7dfe272.
 
 ## Fresh engineering evidence
-- GitHub Actions NileCare CI run #76 (36337458468) completed successfully on the current main head.
+- GitHub Actions NileCare CI run #78 (36337506796) completed successfully on the current main head.
 - CI job `verify` completed successfully.
 - CI verified `npm ci`, TypeScript compilation, Next.js build, the repository test suite, and the self-check.
 - Repository test suite: 32/32.
