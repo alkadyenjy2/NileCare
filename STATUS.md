@@ -2,20 +2,18 @@
 
 ## Repository
 Canonical repository: https://github.com/alkadyenjy2/NileCare
-Current main head at status refresh: b2e60f8d72fce68a1b566bf30803fcd08fc2a52b.
+Current main head: ea73d13cf2b608768ffe082e701b421a275fc355.
 
 ## Fresh engineering evidence
-- GitHub Actions NileCare CI run #72 (36333725214) completed successfully on the current main head.
+- GitHub Actions NileCare CI run #76 (36337458468) completed successfully on the current main head.
 - CI job `verify` completed successfully.
 - CI verified `npm ci`, TypeScript compilation, Next.js build, the repository test suite, and the self-check.
 - Repository test suite: 32/32.
-- The latest code change aligns the documented Paymob secret variable with the runtime intention client: `PAYMOB_SECRET_KEY`.
+- Security hardening on the current head covers Meta identity verification, Paymob configuration detection and lead input length bounds.
 - Neon is the default production persistence provider; Supabase is used only when explicitly selected.
-- Real Neon credentials/project and NileCare schema migrations were previously verified through the production Neon bootstrap workflow.
-- Paymob checkout callback URLs are derived from the incoming request origin; no staging callback is hard-coded into the production checkout route.
-- Vercel remains staging-only. No commercial production promotion is asserted.
-- Cloudflare Free/workers.dev is not used as a commercial-production substitute.
-- Railway and unrelated projects are not used for NileCare.
+- Real Neon connectivity/schema application was previously verified through the dedicated production bootstrap workflow.
+- Paymob checkout callback URLs are derived from the incoming request origin.
+- Vercel is not currently behaviorally verified as a NileCare runtime from the connected account; no commercial production promotion is asserted.
 - Open GitHub issues: none.
 - Open GitHub pull requests: none.
 
@@ -26,7 +24,7 @@ Current main head at status refresh: b2e60f8d72fce68a1b566bf30803fcd08fc2a52b.
 - PostgreSQL production hardening and deny-by-default access.
 - Paymob HMAC verification and idempotent events.
 - WhatsApp verification/signature validation and idempotent events.
-- Meta identity contamination guard.
+- Meta identity contamination guard and returned Page identity check.
 - AI provider abstraction.
 - Content and brand gates.
 - CI verification suite.
@@ -46,13 +44,12 @@ Current main head at status refresh: b2e60f8d72fce68a1b566bf30803fcd08fc2a52b.
 
 ## Decision
 1. Keep Neon as production PostgreSQL.
-2. Keep Vercel as staging unless the account/plan is explicitly eligible for commercial production.
-3. Keep all external integrations fail-closed until real credentials and provider evidence exist.
-4. Do not fabricate commercial terms, identities, credentials, brand assets, patient data, testimonials, pricing, or approved content.
-5. Do not spend scarce/paid resources merely to bypass an external provisioning gate.
+2. Keep production activation fail-closed until the external gates above are provisioned and behaviorally verified.
+3. Do not fabricate commercial terms, identities, credentials, brand assets, patient data, testimonials, pricing, or approved content.
+4. Do not spend scarce/paid resources merely to bypass an external provisioning gate.
 
 ## Definition of closed
-The repository-side engineering track is closed when no safe internal change remains that depends on unavailable external inputs. Production activation is not claimed until the external gates above are provisioned and behaviorally verified.
+The repository-side engineering track is closed for the currently available inputs. Production activation is not claimed until the external gates are provisioned and behaviorally verified.
 
 ## Evidence rule
 No “done”, “connected”, “deployed to production”, or provider “success” claim is valid without fresh execution evidence from the relevant system.
