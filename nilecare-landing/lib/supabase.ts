@@ -15,7 +15,8 @@ async function supabaseInsert(table:string,data:unknown):Promise<EventResult>{
   return{ok:true,duplicate:false,data:await r.json().catch(()=>null)};
 }
 
-function provider(){return process.env.NILECARE_PERSISTENCE_PROVIDER?.toLowerCase()==="neon"?"neon":"supabase"}
+// NileCare production is Neon. Supabase is retained only as an explicitly selected legacy-compatible provider.
+function provider(){return process.env.NILECARE_PERSISTENCE_PROVIDER?.toLowerCase()==="supabase"?"supabase":"neon"}
 
 async function insert(table:string,data:Record<string,unknown>):Promise<EventResult>{
   return provider()==="neon"?neonInsert(table,data):supabaseInsert(table,data);
