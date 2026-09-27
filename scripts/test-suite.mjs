@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
-const root = process.cwd().endsWith("nilecare-landing") ? ".." : ".";
+import {fileURLToPath} from "node:url";
+import {dirname, join} from "node:path";
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const file = (p) => readFile(`${root}/${p}`, "utf8");
 const [d,o,p,w,m,ci,s,n,sp,sql,c,wr]=await Promise.all([
  file("nilecare-landing/lib/domain.ts"),file("nilecare-landing/lib/offer.ts"),file("nilecare-landing/lib/paymob.ts"),
