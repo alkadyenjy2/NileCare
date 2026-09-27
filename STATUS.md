@@ -14,7 +14,9 @@ The current branch contains documentation-only refreshes after that verified cod
 - Neon is the default production persistence provider; Supabase is used only when explicitly selected.
 - Real Neon connectivity/schema application was previously verified through the dedicated production bootstrap workflow.
 - Paymob checkout callback URLs are derived from the incoming request origin.
-- Vercel is not currently behaviorally verified as a NileCare runtime from the connected account; no commercial production promotion is asserted.
+- Vercel production deployment dpl_5sMdJ6UiVp6HpmEcisktmmApAs3W reached READY and aliases nilecare-psi.vercel.app and nilecare-enjyalkady1988155-8480.vercel.app.
+- Public smoke tests: / = 200; invalid /api/lead = 400; protected /api/offer = 401; protected /api/paymob/intention = 401; GET /api/whatsapp/webhook = 403.
+- Production Neon connectivity is freshly verified with a read-only select 1 query using the production DATABASE_URL; no application data was written.
 - Open GitHub issues: none.
 - Open GitHub pull requests: none.
 
@@ -40,8 +42,8 @@ The current branch contains documentation-only refreshes after that verified cod
 4. Verified NileCare Meta Page/Instagram identity and credentials.
 5. Official brand assets.
 6. Approval and finalization of the 80 production posts/images.
-7. Commercial production hosting/account access.
-8. Production secrets and final domain binding.
+7. Final domain binding (the Vercel production alias is live, but no custom domain is asserted).
+8. Remaining provider secrets/configuration: Paymob secret/HMAC/iframe, WhatsApp Cloud API credentials, Meta Page/Instagram credentials, plus final commercial offer and approved content/brand inputs.
 
 ## Definition of closed
 Repository-side engineering is closed for the currently available inputs. Production activation is not claimed until the external gates are provisioned and behaviorally verified.

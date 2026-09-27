@@ -30,7 +30,9 @@ The branch now contains documentation-only refreshes after that verified code st
 ## Behavioral evidence
 - GitHub Actions repository execution is verified through CI #79.
 - Neon connectivity/schema application was previously verified through the dedicated production bootstrap workflow.
-- Current public runtime is NOT VERIFIED from the connected Vercel/browser surfaces.
+- Vercel production deployment dpl_5sMdJ6UiVp6HpmEcisktmmApAs3W is VERIFIED READY with the production alias nilecare-psi.vercel.app.
+- Public smoke tests are VERIFIED: home 200; invalid lead 400; protected offer 401; protected Paymob intention 401; WhatsApp webhook GET 403.
+- Production Neon connectivity is VERIFIED with a read-only select 1 query; no application data was written.
 - Paymob, WhatsApp and Meta provider behavior are NOT VERIFIED because real provider credentials/identities are unavailable to the connected tools.
 
 ## External blockers
@@ -40,7 +42,8 @@ The branch now contains documentation-only refreshes after that verified code st
 - Verified NileCare Meta Page/Instagram identity and credentials.
 - Official brand kit.
 - Approved 80-post/image content bank.
-- Commercial production hosting/account access, production secrets and final domain binding.
+- Final custom domain binding.
+- Paymob merchant configuration/credentials, WhatsApp Business credentials, Meta identity/credentials, clinic commercial offer, official brand kit, and approved 80-post/image content bank.
 
 ## Integrity rule
 No external provider is marked connected without provider evidence. Missing inputs remain blocked; placeholders are never treated as production data.
