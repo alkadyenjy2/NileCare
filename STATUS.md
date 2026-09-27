@@ -2,18 +2,22 @@
 
 ## Repository
 Canonical repository: https://github.com/alkadyenjy2/NileCare
+Current main head: f1f13198bbe35e3fcbda089eacafcef0112be67b.
 
 ## Fresh engineering evidence
-- Current main head: 5f804be84623e57fec01f9914181a95f98cafbb1.
-- GitHub Actions NileCare CI run #67 (36327014617) completed successfully on the current head.
-- CI verified dependency installation, TypeScript compilation, Next.js build, test suite, and self-check.
+- GitHub Actions NileCare CI run #71 (36327991414) completed successfully on the current main head.
+- CI job `verify` completed successfully.
+- CI verified `npm ci`, TypeScript compilation, Next.js build, the repository test suite, and the self-check.
 - Repository test suite: 32/32.
+- The latest code change aligns the documented Paymob secret variable with the runtime intention client: `PAYMOB_SECRET_KEY`.
 - Neon is the default production persistence provider; Supabase is used only when explicitly selected.
 - Real Neon credentials/project and NileCare schema migrations were previously verified through the production Neon bootstrap workflow.
 - Paymob checkout callback URLs are derived from the incoming request origin; no staging callback is hard-coded into the production checkout route.
 - Vercel remains staging-only. No commercial production promotion is asserted.
 - Cloudflare Free/workers.dev is not used as a commercial-production substitute.
 - Railway and unrelated projects are not used for NileCare.
+- Open GitHub issues: none.
+- Open GitHub pull requests: none.
 
 ## Internal gates implemented
 - Lead validation and persistence boundary.
