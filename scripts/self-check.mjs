@@ -5,5 +5,6 @@ const d=await file("nilecare-landing/lib/domain.ts"),m=await file("supabase/001_
 const n=await file("nilecare-landing/lib/neon.ts"),sp=await file("nilecare-landing/lib/supabase.ts"),rd=await file("nilecare-landing/lib/readiness.ts");
 assert.match(d,/validateLead/); assert.match(d,/canTransition/); assert.match(m,/unique\(event_type, external_id\)/);
 assert.equal(p.expected_count,80); assert.deepEqual(p.approved_posts,[]);
-assert.match(n,/Neon-Connection-String/); assert.match(n,/23505/); assert.match(sp,/NILECARE_PERSISTENCE_PROVIDER/); assert.match(rd,/PAYMOB_SECRET_KEY/); assert.match(rd,/WHATSAPP_ACCESS_TOKEN/); assert.match(rd,/META_PAGE_ACCESS_TOKEN/);
+assert.match(n,/Neon-Connection-String/); assert.match(n,/23505/); assert.match(sp,/NILECARE_PERSISTENCE_PROVIDER/);
+assert.match(rd,/OPTIONAL_PHASE_2/); assert.match(rd,/MANUAL_PAYMENT_READY/); assert.match(rd,/WHATSAPP_ACCESS_TOKEN/); assert.match(rd,/META_PAGE_ACCESS_TOKEN/);
 console.log("NILECARE_SELF_CHECK=PASS"); console.log("NO_FAKE_POSTS=PASS"); console.log("IDEMPOTENCY_CONSTRAINT=PASS"); console.log("DOMAIN_VALIDATION_SOURCE_PRESENT=PASS"); console.log("NEON_PROVIDER_SOURCE_PRESENT=PASS"); console.log("PROVIDER_SELECTION_SOURCE_PRESENT=PASS");
