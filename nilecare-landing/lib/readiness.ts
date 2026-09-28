@@ -1,7 +1,6 @@
 import { timingSafeEqual } from "node:crypto";
 
 const required: Record<string, string[]> = {
-  paymob: ["PAYMOB_SECRET_KEY", "PAYMOB_INTEGRATION_ID", "PAYMOB_IFRAME_ID", "PAYMOB_HMAC_SECRET"],
   whatsapp: ["WABA_ID", "PHONE_NUMBER_ID", "WHATSAPP_ACCESS_TOKEN", "WHATSAPP_APP_SECRET"],
   meta: ["META_PAGE_ID", "META_PAGE_ACCESS_TOKEN", "META_GRAPH_VERSION"],
 };
@@ -24,7 +23,7 @@ export function productionReadiness(request: Request) {
 
   const providers = Object.fromEntries(Object.entries(required).map(([provider, keys]) => {
     const missing = keys.filter((key) => !present(key));
-    return [provider, { ready: missing.length === 0, missing }];
+    return [provider, { ready: missing.length === 0, required: true, missing }];
   }));
 
   const persistenceReady = present("DATABASE_URL");
@@ -40,6 +39,12 @@ export function productionReadiness(request: Request) {
       status: "READINESS_REPORT",
       persistence: { ready: persistenceReady, missing: persistenceReady ? [] : ["DATABASE_URL"] },
       webhook: { ready: webhookReady, missing: webhookReady ? [] : ["NILECARE_WEBHOOK_SECRET"] },
+      payment: {
+        ready: false,
+        mode: "MANUAL_PAYMENT_READY",
+        paymob: { required: false, ready: false, status: "OPTIONAL_PHASE_2" },
+        manual: { ready: true, evidence_required_before_paid: true },
+      },
       providers,
       commercial_offer: { ready: offerReady, status: "BLOCKED_SOURCE_MISSING" },
       brand: { ready: brandReady, status: "BLOCKED_OFFICIAL_ASSETS_MISSING" },
