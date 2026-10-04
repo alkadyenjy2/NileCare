@@ -14,7 +14,7 @@ const [d,o,p,w,m,ci,s,n,sp,sql,c,wr,pi,page,mig]=await Promise.all([
 const checks=[
  [d,/validateLead/],[d,/canTransition/],[d,/closed_lost/],[d,/provider_evidence_id/],[o,/validateOffer/],[o,/approved/],
  [p,/PAYMOB_HMAC_SECRET/],[p,/sha512/],[w,/verifyWhatsAppSignature/],[w,/WEBHOOK_VERIFY_TOKEN/],[m,/NileCare/],[m,/179969831856298/],
- [sql,/clinic_offers/],[sql,/whatsapp_messages/],[sql,/row level security/i],[sql,/provider_event_id/],[ci,/npm ci/],[ci,/npm run build/],
+ [s,/clinic_offers/],[s,/whatsapp_messages/],[sql,/row level security/i],[sql,/provider_event_id/],[ci,/npm ci/],[ci,/npm run build/],
  [ci,/self-check/],[ci,/npx tsc/],[p,/PAYMOB_HMAC_SECRET/],[w,/WHATSAPP_APP_SECRET/],[n,/Neon-Connection-String/],
  [sp,/NILECARE_PERSISTENCE_PROVIDER/],[sql,/lead_id uuid references public.leads\(id\)/],[d,/isStage\(from\)/],[wr,/try/],[wr,/catch/],
  [wr,/INVALID_WHATSAPP_JSON/],[pi,/createPaymobIntention/],[pi,/new URL\(request.url\).origin/],[sp,/===\"supabase\"\?\"supabase\":\"neon\"/],
