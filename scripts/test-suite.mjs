@@ -15,8 +15,9 @@ const checks=[
  /verifyWhatsAppSignature/,/WEBHOOK_VERIFY_TOKEN/,/179969831856298/,/NileCare/,/clinic_offers/,/whatsapp_messages/,
  /row level security/i,/provider_event_id/,/npm ci/,/npm run build/,/self-check/,/npx tsc/,/PAYMOB_HMAC_SECRET/,/WHATSAPP_APP_SECRET/,
  /Neon-Connection-String/,/NILECARE_PERSISTENCE_PROVIDER/,/lead_id uuid references public.leads\(id\)/,/isStage\(from\)/,/try/,/catch/,/INVALID_WHATSAPP_JSON/,
- /createPaymobIntention/,/new URL\(request.url\).origin/,/==="supabase"\?"supabase"\:"neon"/
+ /createPaymobIntention/,/new URL\(request.url\).origin/,/==="supabase"\?"supabase":"neon"/,
+ /full_name/,/preferred_contact_method/,/consent/,/Cross-border care, coordinated/,/003_patient_inquiry/
 ];
-const values=[d,d,d,d,o,o,p,p,w,w,m,m,s,s,s,s,ci,ci,ci,ci,p,w,n,sp,sql,d,c,c,wr,pi,pi,sp];
+const values=[d,d,d,d,o,o,p,p,w,w,m,m,s,s,s,s,ci,ci,ci,ci,p,w,n,sp,sql,d,c,c,wr,pi,c,c,c,c,c,c,c,c];
 checks.forEach((re,i)=>assert.match(values[i],re,"check "+(i+1)+" failed"));
 console.log("NILECARE_TEST_SUITE=32/32 PASS");
