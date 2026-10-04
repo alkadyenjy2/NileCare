@@ -16,10 +16,10 @@ const checks=[
  [p,/PAYMOB_HMAC_SECRET/],[p,/sha512/],[w,/verifyWhatsAppSignature/],[w,/WEBHOOK_VERIFY_TOKEN/],[m,/NileCare/],[m,/179969831856298/],
  [s,/clinic_offers/],[s,/whatsapp_messages/],[sql,/row level security/i],[sql,/provider_event_id/],[ci,/npm ci/],[ci,/npm run build/],
  [ci,/self-check/],[ci,/npx tsc/],[p,/PAYMOB_HMAC_SECRET/],[w,/WHATSAPP_APP_SECRET/],[n,/Neon-Connection-String/],
- [sp,/NILECARE_PERSISTENCE_PROVIDER/],[sql,/lead_id uuid references public.leads\\(id\\)/],[d,/isStage\\(from\\)/],[wr,/try/],[wr,/catch/],
- [wr,/INVALID_WHATSAPP_JSON/],[pi,/createPaymobIntention/],[pi,/new URL\\(request.url\\).origin/],[sp,/===\"supabase\"\\?\"supabase\":\"neon\"/],
- [d,/full_name/],[d,/preferred_contact_method/],[d,/consent/],[c,/name=\"full_name\"/],[c,/name=\"service_category\"/],[c,/name=\"preferred_contact_method\"/],
- [c,/name=\"message\"/],[c,/name=\"consent\"/],[page,/Cross-border care, coordinated/],[mig,/alter table public\\.leads alter column clinic_name drop not null/],[mig,/add column if not exists full_name/]
+ [sp,/NILECARE_PERSISTENCE_PROVIDER/],[sql,/lead_id uuid references public.leads\(id\)/],[d,/isStage\(from\)/],[wr,/try/],[wr,/catch/],
+ [wr,/INVALID_WHATSAPP_JSON/],[pi,/createPaymobIntention/],[pi,/new URL\(request.url\).origin/],[sp,/==="supabase"\?"supabase":"neon"/],
+ [d,/full_name/],[d,/preferred_contact_method/],[d,/consent/],[c,/name="full_name"/],[c,/name="service_category"/],[c,/name="preferred_contact_method"/],
+ [c,/name="message"/],[c,/name="consent"/],[page,/Cross-border care, coordinated/],[mig,/alter table public\.leads alter column clinic_name drop not null/],[mig,/add column if not exists full_name/]
 ];
 checks.forEach(([value,re],i)=>assert.match(value,re,"check "+(i+1)+" failed"));
 console.log("NILECARE_TEST_SUITE=44/44 PASS");
