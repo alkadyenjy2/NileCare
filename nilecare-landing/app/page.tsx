@@ -1,24 +1,2 @@
 import ContactForm from "./ContactForm";
-
-export default function Home() {
-  return (
-    <main>
-      <section className="hero">
-        <p className="eyebrow">NileCare</p>
-        <h1>Clinic coordination, simplified.</h1>
-        <p className="lead">NileCare organizes real clinic inquiries from first contact to verified operational handoff — without diagnosing, inventing prices, or promising medical outcomes.</p>
-        <a className="cta" href="#contact">Request coordination</a>
-      </section>
-      <section className="grid">
-        <article><h2>Intake & routing</h2><p>Capture the inquiry, qualify the request, and route it to a real participating clinic or service.</p></article>
-        <article><h2>Communication</h2><p>Keep clinic-approved communication and operational events organized. WhatsApp can be connected when the real channel is provisioned.</p></article>
-        <article><h2>Payment handoff</h2><p>The MVP can use a clinic-approved manual payment method. A lead is never marked paid without evidence.</p></article>
-      </section>
-      <section id="contact" className="contact">
-        <h2>Start with a real clinic service</h2>
-        <p>Pricing and package terms are published only after a participating clinic approves the exact scope.</p>
-        <ContactForm />
-      </section>
-    </main>
-  );
-}
+export default function Home(){return <main><section className="hero"><p className="eyebrow">NileCare</p><h1>Cross-border care, coordinated</h1><p className="lead">Medical travel coordination for international patients.</p><p>We help international patients coordinate communication and appointment requests with participating clinics. NileCare does not diagnose, prescribe treatment, or set medical prices.</p><a className="cta" href="#contact">Request Coordination</a></section><section className="grid"><article><h2>Receive inquiry</h2><p>Capture the patient request without collecting sensitive medical details.</p></article><article><h2>Qualify lead</h2><p>Review the coordination request and confirm the service category and contact route.</p></article><article><h2>Coordinate with clinics</h2><p>Coordinate only with real participating clinics and approved commercial terms.</p></article><article><h2>Track to outcome</h2><p>Workflow: NEW → PAID / CLOSED_LOST. Paid status requires provider evidence.</p></article></section><section id="contact" className="contact"><h2>Request Coordination</h2><p>Tell us what you need coordinated. Do not include sensitive medical details.</p><ContactForm/></section><footer>NileCare · Coordination, not care. Built as a coordination MVP — no clinical claims.</footer></main>}
