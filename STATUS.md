@@ -2,23 +2,13 @@
 
 ## Repository
 Canonical repository: https://github.com/alkadyenjy2/NileCare
-Last code-bearing verified head: 1faf0ae8e146bfe493ee368ce3312514dc3abdb0.
-The current branch contains documentation-only refreshes after that verified code state.
+Current main after latest fix: c6fb10bd18139a75e471b6415e142537730ce32d.
 
 ## Fresh engineering evidence
-- GitHub Actions NileCare CI run #79 (36337572058) completed successfully on code-bearing head `1faf0ae8e146bfe493ee368ce3312514dc3abdb0`.
-- CI job `verify` completed successfully.
-- CI verified `npm ci`, TypeScript compilation, Next.js build, the repository test suite, and the self-check.
-- Repository test suite: 32/32.
-- Security hardening covers Meta identity verification, Paymob configuration detection and lead input length bounds.
-- Neon is the default production persistence provider; Supabase is used only when explicitly selected.
-- Real Neon connectivity/schema application was previously verified through the dedicated production bootstrap workflow.
-- Paymob checkout callback URLs are derived from the incoming request origin.
-- Vercel production deployment dpl_5sMdJ6UiVp6HpmEcisktmmApAs3W reached READY and aliases nilecare-psi.vercel.app and nilecare-enjyalkady1988155-8480.vercel.app.
-- Public smoke tests: / = 200; invalid /api/lead = 400; protected /api/offer = 401; protected /api/paymob/intention = 401; GET /api/whatsapp/webhook = 403.
-- Production Neon connectivity is freshly verified with a read-only select 1 query using the production DATABASE_URL; no application data was written.
-- Open GitHub issues: none.
-- Open GitHub pull requests: none.
+- The 2026-10-04 main CI failure was diagnosed from the actual job log: TypeScript and Next.js production build passed; the repository test suite failed only because checks 13/14 read `001_nilecare_core.sql` while `clinic_offers` and `whatsapp_messages` are defined in `002_production_hardening.sql`.
+- PR #9 corrected only those two test references; no production runtime code changed.
+- PR #9 was merged to main as `c6fb10bd18139a75e471b6415e142537730ce32d`.
+- The corrected test contract remains 44/44 checks and preserves all other assertions unchanged.
 
 ## Internal gates implemented
 - Lead validation and persistence boundary.
@@ -42,8 +32,8 @@ The current branch contains documentation-only refreshes after that verified cod
 4. Verified NileCare Meta Page/Instagram identity and credentials.
 5. Official brand assets.
 6. Approval and finalization of the 80 production posts/images.
-7. Final domain binding (the Vercel production alias is live, but no custom domain is asserted).
-8. Remaining provider secrets/configuration: Paymob secret/HMAC/iframe, WhatsApp Cloud API credentials, Meta Page/Instagram credentials, plus final commercial offer and approved content/brand inputs.
+7. Final domain binding.
+8. Remaining provider secrets/configuration.
 
 ## Definition of closed
 Repository-side engineering is closed for the currently available inputs. Production activation is not claimed until the external gates are provisioned and behaviorally verified.
