@@ -2,22 +2,24 @@ import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
 import {fileURLToPath} from "node:url";
 import {dirname, join} from "node:path";
-const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const file = (p) => readFile(`${root}/${p}`, "utf8");
-const [d,o,p,w,m,ci,s,n,sp,sql,c,wr,pi]=await Promise.all([
+const root=join(dirname(fileURLToPath(import.meta.url)),"..");
+const file=(p)=>readFile(join(root,p),"utf8");
+const [d,o,p,w,m,ci,s,n,sp,sql,c,wr,pi,page,mig]=await Promise.all([
  file("nilecare-landing/lib/domain.ts"),file("nilecare-landing/lib/offer.ts"),file("nilecare-landing/lib/paymob.ts"),
  file("nilecare-landing/lib/whatsapp.ts"),file("nilecare-landing/lib/meta.ts"),file(".github/workflows/ci.yml"),
- file("supabase/002_production_hardening.sql"),file("nilecare-landing/lib/neon.ts"),file("nilecare-landing/lib/supabase.ts"),file("supabase/001_nilecare_core.sql"),file("nilecare-landing/app/ContactForm.tsx"),file("nilecare-landing/app/api/whatsapp/webhook/route.ts"),
- file("nilecare-landing/app/api/paymob/intention/route.ts")
+ file("supabase/002_production_hardening.sql"),file("nilecare-landing/lib/neon.ts"),file("nilecare-landing/lib/supabase.ts"),
+ file("supabase/001_nilecare_core.sql"),file("nilecare-landing/app/ContactForm.tsx"),file("nilecare-landing/app/api/whatsapp/webhook/route.ts"),
+ file("nilecare-landing/app/api/paymob/intention/route.ts"),file("nilecare-landing/app/page.tsx"),file("supabase/003_patient_inquiry.sql")
 ]);
 const checks=[
- /validateLead/,/canTransition/,/closed_lost/,/provider_evidence_id/,/validateOffer/,/approved/,/PAYMOB_HMAC_SECRET/,/sha512/,
- /verifyWhatsAppSignature/,/WEBHOOK_VERIFY_TOKEN/,/179969831856298/,/NileCare/,/clinic_offers/,/whatsapp_messages/,
- /row level security/i,/provider_event_id/,/npm ci/,/npm run build/,/self-check/,/npx tsc/,/PAYMOB_HMAC_SECRET/,/WHATSAPP_APP_SECRET/,
- /Neon-Connection-String/,/NILECARE_PERSISTENCE_PROVIDER/,/lead_id uuid references public.leads\(id\)/,/isStage\(from\)/,/try/,/catch/,/INVALID_WHATSAPP_JSON/,
- /createPaymobIntention/,/new URL\(request.url\).origin/,/==="supabase"\?"supabase":"neon"/,
- /full_name/,/preferred_contact_method/,/consent/,/Cross-border care, coordinated/,/003_patient_inquiry/
+ [d,/validateLead/],[d,/canTransition/],[d,/closed_lost/],[d,/provider_evidence_id/],[o,/validateOffer/],[o,/approved/],
+ [p,/PAYMOB_HMAC_SECRET/],[p,/sha512/],[w,/verifyWhatsAppSignature/],[w,/WEBHOOK_VERIFY_TOKEN/],[m,/NileCare/],[m,/179969831856298/],
+ [sql,/clinic_offers/],[sql,/whatsapp_messages/],[sql,/row level security/i],[sql,/provider_event_id/],[ci,/npm ci/],[ci,/npm run build/],
+ [ci,/self-check/],[ci,/npx tsc/],[p,/PAYMOB_HMAC_SECRET/],[w,/WHATSAPP_APP_SECRET/],[n,/Neon-Connection-String/],
+ [sp,/NILECARE_PERSISTENCE_PROVIDER/],[sql,/lead_id uuid references public.leads\(id\)/],[d,/isStage\(from\)/],[wr,/try/],[wr,/catch/],
+ [wr,/INVALID_WHATSAPP_JSON/],[pi,/createPaymobIntention/],[pi,/new URL\(request.url\).origin/],[sp,/===\"supabase\"\?\"supabase\":\"neon\"/],
+ [d,/full_name/],[d,/preferred_contact_method/],[d,/consent/],[c,/name="full_name"/],[c,/name="service_category"/],[c,/name="preferred_contact_method"/],
+ [c,/name="message"/],[c,/name="consent"/],[page,/Cross-border care, coordinated/],[mig,/alter table public\.leads alter column clinic_name drop not null/],[mig,/add column if not exists full_name/]
 ];
-const values=[d,d,d,d,o,o,p,p,w,w,m,m,s,s,s,s,ci,ci,ci,ci,p,w,n,sp,sql,d,c,c,wr,pi,c,c,c,c,c,c,c,c];
-checks.forEach((re,i)=>assert.match(values[i],re,"check "+(i+1)+" failed"));
-console.log("NILECARE_TEST_SUITE=32/32 PASS");
+checks.forEach(([value,re],i)=>assert.match(value,re,"check "+(i+1)+" failed"));
+console.log("NILECARE_TEST_SUITE=44/44 PASS");
