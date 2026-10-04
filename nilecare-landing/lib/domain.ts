@@ -9,16 +9,7 @@ export function canTransition(from:Stage,to:Stage,context?:{provider_evidence_id
  if(to==="closed_lost"&&!context?.loss_reason?.trim())return false;
  return true;
 }
-export type LeadInput={clinic_name:string;contact_name:string|null;phone:string|null;whatsapp:string|null;email:string|null;source:"landing"|"whatsapp"|"meta"|"referral"|"manual"};
-const MAX:Record<string,number>={clinic_name:200,contact_name:200,phone:40,whatsapp:40,email:320};
-export function validateLead(input:unknown):{ok:true;value:LeadInput}|{ok:false;errors:string[]}{
- if(!input||typeof input!=="object")return{ok:false,errors:["body must be an object"]};
- const x=input as Record<string,unknown>,errors:string[]=[];
- if(typeof x.clinic_name!=="string"||x.clinic_name.trim().length<2)errors.push("clinic_name is required");
- if(typeof x.clinic_name==="string"&&x.clinic_name.trim().length>MAX.clinic_name)errors.push("clinic_name is too long");
- if(!["landing","whatsapp","meta","referral","manual"].includes(String(x.source)))errors.push("source is invalid");
- for(const key of ["contact_name","phone","whatsapp","email"])if(x[key]!==undefined&&x[key]!==null&&typeof x[key]!=="string")errors.push(key+" must be a string or null");
- for(const key of ["contact_name","phone","whatsapp","email"])if(typeof x[key]==="string"&&x[key].trim().length>MAX[key])errors.push(key+" is too long");
- if(errors.length)return{ok:false,errors};
- return{ok:true,value:{clinic_name:String(x.clinic_name).trim(),contact_name:x.contact_name==null?null:String(x.contact_name).trim(),phone:x.phone==null?null:String(x.phone).trim(),whatsapp:x.whatsapp==null?null:String(x.whatsapp).trim(),email:x.email==null?null:String(x.email).trim(),source:x.source as LeadInput["source"]}};
-}
+export type LeadInput={full_name:string;email:string;phone:string|null;whatsapp:string|null;country:string;service_category:string;preferred_contact_method:"email"|"whatsapp"|"phone";message:string;consent:true;source:"landing"|"whatsapp"|"meta"|"referral"|"manual"};
+const MAX:Record<string,number>={full_name:200,email:320,phone:40,whatsapp:40,country:100,service_category:120,message:4000};
+const CONTACT_METHODS=["email","whatsapp","phone"] as const;
+export function validateLead(input:unknown):{ok:true;value:LeadInput}|{ok:false;errors:string[]}{if(!input||typeof input!=="object")return{ok:false,errors:["body must be an object"]};const x=input as Record<string,unknown>,errors:string[]=[];for(const key of ["full_name","email","country","service_category","message"]){if(typeof x[key]!=="string"||!String(x[key]).trim())errors.push(key+" is required");else if(String(x[key]).trim().length>MAX[key])errors.push(key+" is too long")}if(typeof x.email==="string"&&!/^\S+@\S+\.\S+$/.test(x.email.trim()))errors.push("email is invalid");for(const key of ["phone","whatsapp"])if(x[key]!==undefined&&x[key]!==null&&typeof x[key]!=="string")errors.push(key+" must be a string or null");for(const key of ["phone","whatsapp"])if(typeof x[key]==="string"&&x[key].trim().length>MAX[key])errors.push(key+" is too long");if(!CONTACT_METHODS.includes(x.preferred_contact_method as typeof CONTACT_METHODS[number]))errors.push("preferred_contact_method is invalid");if(x.consent!==true)errors.push("consent is required");if(!["landing","whatsapp","meta","referral","manual"].includes(String(x.source)))errors.push("source is invalid");if(errors.length)return{ok:false,errors};return{ok:true,value:{full_name:String(x.full_name).trim(),email:String(x.email).trim(),phone:x.phone==null?null:String(x.phone).trim()||null,whatsapp:x.whatsapp==null?null:String(x.whatsapp).trim()||null,country:String(x.country).trim(),service_category:String(x.service_category).trim(),preferred_contact_method:x.preferred_contact_method as LeadInput["preferred_contact_method"],message:String(x.message).trim(),consent:true,source:x.source as LeadInput["source"]}}}
