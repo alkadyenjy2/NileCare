@@ -4,16 +4,16 @@ import {fileURLToPath} from "node:url";
 import {dirname, join} from "node:path";
 const root=join(dirname(fileURLToPath(import.meta.url)),"..");
 const file=(p)=>readFile(join(root,p),"utf8");
-const [d,o,p,w,m,ci,s,n,sp,sql,c,wr,pi,page,mig,h]=await Promise.all([
+const [d,o,p,w,m,ci,s,n,sp,sql,c,wr,pi,page,mig,h,b]=await Promise.all([
  file("nilecare-landing/lib/domain.ts"),file("nilecare-landing/lib/offer.ts"),file("nilecare-landing/lib/paymob.ts"),
  file("nilecare-landing/lib/whatsapp.ts"),file("nilecare-landing/lib/meta.ts"),file(".github/workflows/ci.yml"),
  file("supabase/002_production_hardening.sql"),file("nilecare-landing/lib/neon.ts"),file("nilecare-landing/lib/supabase.ts"),
  file("supabase/001_nilecare_core.sql"),file("nilecare-landing/app/ContactForm.tsx"),file("nilecare-landing/app/api/whatsapp/webhook/route.ts"),
  file("nilecare-landing/app/api/paymob/intention/route.ts"),file("nilecare-landing/app/page.tsx"),file("supabase/003_patient_inquiry.sql"),
- file("nilecare-landing/app/api/health/route.ts")
+ file("nilecare-landing/app/api/health/route.ts"),file(".github/workflows/nilecare-production-neon-bootstrap.yml")
 ]);
 const checks=[
- [d,/validateLead/],[d,/canTransition/],[d,/closed_lost/],[d,/provider_evidence_id/],[o,/validateOffer/],[o,/approved/],
+ [d,/validateLead/],[d,/canTransition/],[d,/closed_lost/],[d,/provider_evidence_id/],[b,/003_patient_inquiry\\.sql/],[o,/validateOffer/],[o,/approved/],
  [p,/PAYMOB_HMAC_SECRET/],[p,/sha512/],[w,/verifyWhatsAppSignature/],[w,/WEBHOOK_VERIFY_TOKEN/],[m,/NileCare/],[m,/179969831856298/],
  [s,/clinic_offers/],[s,/whatsapp_messages/],[sql,/row level security/i],[sql,/provider_event_id/],[ci,/npm ci/],[ci,/npm run build/],
  [ci,/self-check/],[ci,/npx tsc/],[ci,/nilecare-production-neon-bootstrap\.yml/],[p,/PAYMOB_HMAC_SECRET/],[w,/WHATSAPP_APP_SECRET/],[n,/Neon-Connection-String/],
