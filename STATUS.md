@@ -2,14 +2,14 @@
 
 ## Repository
 Canonical repository: https://github.com/alkadyenjy2/NileCare
-Current main: fb7034c09e4ecb8757bd148f3efe535bec5ff286.
+Current main: 6032160235be5ff6d8ecbb8addc95d93af655fc9.
 
 ## Fresh engineering evidence — 2026-10-05
-- GitHub Actions run #114 for the current main commit completed successfully.
-- Run ID: 37249225037.
+- GitHub Actions run #122 for the current main commit completed successfully.
+- Run ID: 37251179921.
 - The CI workflow includes npm install, TypeScript, Next.js production build, the repository test suite, and self-check.
 - The production health endpoint was added at `/api/health`.
-- The test contract now explicitly requires the health endpoint and reports 46/46 checks.
+- The test contract now also verifies the Neon production bootstrap applies the patient inquiry migration; fresh CI reports 46/46 checks and self-check PASS.
 - The latest main commit is linked to the Vercel project created for NileCare.
 
 ## Runtime/deployment state
@@ -18,7 +18,7 @@ Current main: fb7034c09e4ecb8757bd148f3efe535bec5ff286.
 - Repository: `alkadyenjy2/NileCare`
 - Production branch: `main`
 - Initial deployment: `dpl_4kmr22z4dAPUqE9VTys5LhHV9WL8`
-- Deployment currently targets commit `fb7034c09e4ecb8757bd148f3efe535bec5ff286`.
+- Deployment automation is triggered from `main`; the latest engineering commit is `6032160235be5ff6d8ecbb8addc95d93af655fc9`.
 - Vercel environment-variable list is currently empty, so production persistence/provider activation is not claimed.
 
 ## Persistence truth
@@ -41,6 +41,7 @@ Current main: fb7034c09e4ecb8757bd148f3efe535bec5ff286.
 - Runtime hardening.
 - Paymob callback origin routing.
 - Neon fail-closed persistence default.
+- Neon bootstrap now applies `supabase/003_patient_inquiry.sql`, closing the patient-schema bootstrap mismatch.
 - Production health endpoint.
 
 ## External production gates still blocked
