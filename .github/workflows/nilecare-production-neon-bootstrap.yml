@@ -52,6 +52,7 @@ jobs:
           set -euo pipefail
           psql "${DATABASE_URL}" -v ON_ERROR_STOP=1 -f supabase/001_nilecare_core.sql
           psql "${DATABASE_URL}" -v ON_ERROR_STOP=1 -f supabase/002_production_hardening.sql
+          psql "${DATABASE_URL}" -v ON_ERROR_STOP=1 -f supabase/003_patient_inquiry.sql
           echo "NILECARE_SCHEMA_APPLY=PASS"
 
       - name: Verify NileCare schema
