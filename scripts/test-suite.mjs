@@ -24,4 +24,4 @@ const checks=[
  [h,/NextResponse/],[h,/status:\"ok\"/]
 ];
 checks.forEach(([value,re],i)=>assert.match(value,re,"check "+(i+1)+" failed"));
-console.log("NILECARE_TEST_SUITE=46/46 PASS");
+console.log(`NILECARE_TEST_SUITE=${checks.length}/${checks.length} PASS`);
