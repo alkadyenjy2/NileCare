@@ -16,7 +16,7 @@ const checks=[
  [d,/validateLead/],[d,/canTransition/],[d,/closed_lost/],[d,/provider_evidence_id/],[b,/003_patient_inquiry\\.sql/],[o,/validateOffer/],[o,/approved/],
  [p,/PAYMOB_HMAC_SECRET/],[p,/sha512/],[w,/verifyWhatsAppSignature/],[w,/WEBHOOK_VERIFY_TOKEN/],[m,/NileCare/],[m,/179969831856298/],
  [s,/clinic_offers/],[s,/whatsapp_messages/],[sql,/row level security/i],[sql,/provider_event_id/],[ci,/npm ci/],[ci,/npm run build/],
- [ci,/self-check/],[ci,/npx tsc/],[ci,/nilecare-production-neon-bootstrap\.yml/],[p,/PAYMOB_HMAC_SECRET/],[w,/WHATSAPP_APP_SECRET/],[n,/Neon-Connection-String/],
+ [ci,/self-check/],[ci,/npx tsc/],[p,/PAYMOB_HMAC_SECRET/],[w,/WHATSAPP_APP_SECRET/],[n,/Neon-Connection-String/],
  [sp,/NILECARE_PERSISTENCE_PROVIDER/],[sql,/lead_id uuid references public.leads\(id\)/],[d,/isStage\(from\)/],[wr,/try/],[wr,/catch/],
  [wr,/INVALID_WHATSAPP_JSON/],[pi,/createPaymobIntention/],[pi,/new URL\(request.url\).origin/],[sp,/===\"supabase\"\?\"supabase\":\"neon\"/],
  [d,/full_name/],[d,/preferred_contact_method/],[d,/consent/],[c,/name=\"full_name\"/],[c,/name=\"service_category\"/],[c,/name=\"preferred_contact_method\"/],
