@@ -2,13 +2,30 @@
 
 ## Repository
 Canonical repository: https://github.com/alkadyenjy2/NileCare
-Current main after latest fix: c6fb10bd18139a75e471b6415e142537730ce32d.
+Current main: fb7034c09e4ecb8757bd148f3efe535bec5ff286.
 
-## Fresh engineering evidence
-- The 2026-10-04 main CI failure was diagnosed from the actual job log: TypeScript and Next.js production build passed; the repository test suite failed only because checks 13/14 read `001_nilecare_core.sql` while `clinic_offers` and `whatsapp_messages` are defined in `002_production_hardening.sql`.
-- PR #9 corrected only those two test references; no production runtime code changed.
-- PR #9 was merged to main as `c6fb10bd18139a75e471b6415e142537730ce32d`.
-- The corrected test contract remains 44/44 checks and preserves all other assertions unchanged.
+## Fresh engineering evidence — 2026-10-05
+- GitHub Actions run #114 for the current main commit completed successfully.
+- Run ID: 37249225037.
+- The CI workflow includes npm install, TypeScript, Next.js production build, the repository test suite, and self-check.
+- The production health endpoint was added at `/api/health`.
+- The test contract now explicitly requires the health endpoint and reports 46/46 checks.
+- The latest main commit is linked to the Vercel project created for NileCare.
+
+## Runtime/deployment state
+- Vercel project: `nilecare`
+- Project ID: `prj_DBOBAsIt61tjCGb2dji913TMdYvu`
+- Repository: `alkadyenjy2/NileCare`
+- Production branch: `main`
+- Initial deployment: `dpl_4kmr22z4dAPUqE9VTys5LhHV9WL8`
+- Deployment currently targets commit `fb7034c09e4ecb8757bd148f3efe535bec5ff286`.
+- Vercel environment-variable list is currently empty, so production persistence/provider activation is not claimed.
+
+## Persistence truth
+- The canonical runtime defaults to Neon.
+- `NILECARE_PERSISTENCE_PROVIDER=supabase` is an explicit legacy override; otherwise the provider is Neon.
+- No dedicated NileCare Supabase production project currently exists in the connected Supabase account.
+- Therefore the earlier instruction to “open a new Supabase project” is stale unless the product decision is changed back to Supabase.
 
 ## Internal gates implemented
 - Lead validation and persistence boundary.
@@ -24,19 +41,20 @@ Current main after latest fix: c6fb10bd18139a75e471b6415e142537730ce32d.
 - Runtime hardening.
 - Paymob callback origin routing.
 - Neon fail-closed persistence default.
+- Production health endpoint.
 
 ## External production gates still blocked
 1. Verified clinic commercial offer: price, terms, scope, delivery time and refund policy.
-2. Paymob merchant configuration and credentials.
-3. WhatsApp provider account, verified sending number and credentials.
-4. Verified NileCare Meta Page/Instagram identity and credentials.
-5. Official brand assets.
-6. Approval and finalization of the 80 production posts/images.
+2. WhatsApp provider account, verified sending number and credentials.
+3. Verified NileCare Meta Page/Instagram identity and credentials.
+4. Official brand assets.
+5. Approval/finalization of production posts and images.
+6. Production environment secrets, especially the real database connection and webhook secret.
 7. Final domain binding.
-8. Remaining provider secrets/configuration.
+8. Paymob merchant configuration remains optional for the current manual-payment MVP and is not required to claim code/CI closure.
 
 ## Definition of closed
-Repository-side engineering is closed for the currently available inputs. Production activation is not claimed until the external gates are provisioned and behaviorally verified.
+Repository-side engineering is closed for the currently available inputs. Vercel project linkage is now created, but production activation is not claimed until environment secrets and the remaining external business/provider gates are provisioned and behaviorally verified.
 
 ## Evidence rule
 No provider or production state is marked successful without fresh evidence from the relevant system.
