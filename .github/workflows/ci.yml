@@ -19,6 +19,7 @@ jobs:
           cache: npm
           cache-dependency-path: nilecare-landing/package-lock.json
       - run: npm ci
+      - run: npm audit --audit-level=critical
       - run: npx tsc --noEmit
       - run: npm run build
       - run: node ../scripts/test-suite.mjs
