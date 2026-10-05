@@ -13,7 +13,7 @@ const [d,o,p,w,m,ci,s,n,sp,sql,c,wr,pi,page,mig,h,b]=await Promise.all([
  file("nilecare-landing/app/api/health/route.ts"),file(".github/workflows/nilecare-production-neon-bootstrap.yml")
 ]);
 const checks=[
- [d,/validateLead/],[d,/canTransition/],[d,/closed_lost/],[d,/provider_evidence_id/],[b,/003_patient_inquiry\\.sql/],[o,/validateOffer/],[o,/approved/],
+ [d,/validateLead/],[d,/canTransition/],[d,/closed_lost/],[d,/provider_evidence_id/],[b,/003_patient_inquiry\.sql/],[o,/validateOffer/],[o,/approved/],
  [p,/PAYMOB_HMAC_SECRET/],[p,/sha512/],[w,/verifyWhatsAppSignature/],[w,/WEBHOOK_VERIFY_TOKEN/],[m,/NileCare/],[m,/179969831856298/],
  [s,/clinic_offers/],[s,/whatsapp_messages/],[sql,/row level security/i],[sql,/provider_event_id/],[ci,/npm ci/],[ci,/npm run build/],
  [ci,/self-check/],[ci,/npx tsc/],[p,/PAYMOB_HMAC_SECRET/],[w,/WHATSAPP_APP_SECRET/],[n,/Neon-Connection-String/],
