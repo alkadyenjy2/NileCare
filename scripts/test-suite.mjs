@@ -21,7 +21,7 @@ const checks=[
  [wr,/INVALID_WHATSAPP_JSON/],[pi,/createPaymobIntention/],[pi,/new URL\(request.url\).origin/],[sp,/===\"supabase\"\?\"supabase\":\"neon\"/],
  [d,/full_name/],[d,/preferred_contact_method/],[d,/consent/],[c,/name=\"full_name\"/],[c,/name=\"service_category\"/],[c,/name=\"preferred_contact_method\"/],
  [c,/name=\"message\"/],[c,/name=\"consent\"/],[page,/Cross-border care, coordinated/],[mig,/alter table public\.leads alter column clinic_name drop not null/],[mig,/add column if not exists full_name/],
- [h,/NextResponse/],[h,/status:\"ok\"/]
+ [h,/NextResponse/],[h,/status:\"ok\"/],[h,/persistence/]
 ];
 checks.forEach(([value,re],i)=>assert.match(value,re,"check "+(i+1)+" failed"));
 console.log(`NILECARE_TEST_SUITE=${checks.length}/${checks.length} PASS`);
