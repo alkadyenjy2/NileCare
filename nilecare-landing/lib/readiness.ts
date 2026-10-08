@@ -31,12 +31,15 @@ export function productionReadiness(request: Request) {
   const contentReady = false;
   const brandReady = false;
   const offerReady = false;
+  const mvpLaunchReady = persistenceReady && webhookReady;
 
   return {
     status: 200,
     body: {
       ok: true,
       status: "READINESS_REPORT",
+      mvp_launch_ready: mvpLaunchReady,
+      launch_mode: "ZERO_COST_MVP",
       persistence: { ready: persistenceReady, missing: persistenceReady ? [] : ["DATABASE_URL"] },
       webhook: { ready: webhookReady, missing: webhookReady ? [] : ["NILECARE_WEBHOOK_SECRET"] },
       payment: {
@@ -46,9 +49,9 @@ export function productionReadiness(request: Request) {
         manual: { ready: true, evidence_required_before_paid: true },
       },
       providers,
-      commercial_offer: { ready: offerReady, status: "BLOCKED_SOURCE_MISSING" },
-      brand: { ready: brandReady, status: "BLOCKED_OFFICIAL_ASSETS_MISSING" },
-      content: { ready: contentReady, status: "BLOCKED_APPROVAL_REQUIRED", required_approved_posts: 80 },
+      commercial_offer: { ready: offerReady, required_for_mvp_launch: false, status: "OPTIONAL_FOR_MVP", note: "Required only before representing a specific clinic offer or collecting clinic-linked commercial payment." },
+      brand: { ready: brandReady, required_for_mvp_launch: false, status: "OPTIONAL_FOR_MVP", note: "Current neutral treatment may be used until official brand assets are approved." },
+      content: { ready: contentReady, required_for_mvp_launch: false, status: "OPTIONAL_FOR_MVP", required_approved_posts: 80 },
     },
   };
 }
