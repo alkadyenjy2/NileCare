@@ -1,69 +1,69 @@
 # NileCare — Current Execution Status
 
-## Repository
-Canonical repository: https://github.com/alkadyenjy2/NileCare
-Current main: cddba2d50d1384c6477c4cf77def4bd278866676.
-Branch: main.
+## Current verified state — 2026-10-08
 
-## Fresh engineering evidence — 2026-10-08
-- GitHub Actions NileCare CI run #131 previously completed successfully on the pre-health-probe main commit; it covered npm install, critical npm audit, TypeScript, Next.js build, test suite and self-check.
-- The current commit adds a production persistence health probe and a regression assertion requiring the health response to report persistence.
-- Vercel built the current commit successfully and marked production deployment READY.
-- Fresh production health verification returned HTTP 200 with persistence provider=neon, ready=true, database=neondb, schema=public.
-- Fresh Vercel runtime error scan for the last hour returned no runtime errors.
-
-## Runtime/deployment state
+- Canonical repository: https://github.com/alkadyenjy2/NileCare
+- Branch: main
+- Current main: 4d1a279f75e71ffc86bdd03774f5a93203ce9fd4
 - Vercel project: nilecare
-- Project ID: prj_DBOBAsIt61tjCGb2dji913TMdYvu
-- Repository: alkadyenjy2/NileCare
-- Production branch: main
-- Latest observed production deployment: dpl_6gokuUzRkU4Z3GFUph4297YJft5T, READY, target production, current main behavior.
-- Latest observed deployment URL: https://nilecare-pnjx1osc8-enjy2026.vercel.app
-- Production health was freshly verified at this deployment: HTTP 200 with status=ok, persistence provider=neon, ready=true, database=neondb, schema=public.
-- Current Vercel project metadata shows password protection disabled, SSO protection disabled, and trusted IP protection disabled.
+- Production deployment for current main: dpl_5RMDsM3js67dyTKqGUH7XnLdbjN8
+- Production deployment state: READY
+- Production health: HTTP 200
+- Production persistence: Neon, ready=true, database=neondb, schema=public
+- Vercel runtime errors in the last 24h: none
 
-## Persistence truth
-- Canonical runtime defaults to Neon.
-- NILECARE_PERSISTENCE_PROVIDER=supabase is an explicit legacy override; otherwise the provider is Neon.
-- Vercel currently contains production secrets named DATABASE_URL and NILECARE_PERSISTENCE_PROVIDER. Secret values remain hidden.
-- Neon connectivity is verified from the connected Neon environment with `select 1`, and the production `public.leads` schema now matches the patient inquiry migration (patient fields, nullable clinic_name, and indexes). This proves the Neon project/database itself is reachable and correctly shaped; it does not prove that Vercel's hidden DATABASE_URL points to this exact database.
+## Engineering evidence
 
-## Internal gates implemented
-- Lead validation and persistence boundary.
-- Evidence-gated CRM transitions.
-- Commercial Offer Gate.
-- PostgreSQL production hardening and deny-by-default access.
-- Paymob HMAC verification and idempotent events.
-- WhatsApp verification/signature validation and idempotent events.
-- Meta identity contamination guard and returned Page identity check.
-- AI provider abstraction.
-- Content and brand gates.
-- CI verification suite.
-- Runtime hardening.
-- Paymob callback origin routing.
-- Neon fail-closed persistence default.
-- Neon bootstrap applies supabase/003_patient_inquiry.sql.
-- Production health endpoint.
+GitHub Actions NileCare CI run #139 completed successfully for the current main commit.
 
-## External production gates still blocked
-1. A production persistence health probe now verifies that Vercel can reach Neon at runtime without creating a patient/lead record. A real lead was intentionally not created.
-2. Verified clinic commercial offer: price, terms, scope, delivery time and refund policy.
-3. WhatsApp provider account, verified sending number and credentials, if automated WhatsApp is required.
-4. Verified NileCare Meta Page/Instagram identity and credentials, if Meta intake is required.
-5. Official brand assets or explicit approval of the current brand treatment.
-6. Approval/finalization of production posts and images.
-7. Final domain binding/ownership.
-8. Paymob merchant configuration is optional for the current manual-payment MVP.
+Verified CI stages:
+- npm ci
+- npm audit --audit-level=critical
+- TypeScript
+- Next.js production build
+- test suite
+- self-check
 
-## Zero-cost launch alternative
-The current architecture can launch without Paymob by keeping payment manual and evidence-gated. WhatsApp can remain a direct contact channel until a verified WhatsApp Cloud API account exists. No fake clinic, payment, provider identity, patient, webhook, or social data may be introduced.
+The test suite now explicitly covers the zero-cost MVP readiness contract.
 
-## Definition of closed
-Repository-side engineering and Neon schema/bootstrap alignment are closed for the currently available inputs. Full production activation is not claimed until the remaining external gates above are provisioned and behaviorally verified.
+## Zero-cost MVP gate
 
-## Tool fallback evidence
-- Browser Use could not be used because its connected project reports insufficient credits. Vercel deployment fetch was used instead.
-- Remote Desktop Commander was unavailable for local execution because its connected device was offline.
+nilecare-landing/lib/readiness.ts now exposes:
+- mvp_launch_ready
+- launch_mode=ZERO_COST_MVP
+- commercial_offer required_for_mvp_launch=false
+- brand required_for_mvp_launch=false
+- content required_for_mvp_launch=false
+
+This does not bypass commercial evidence: clinic-linked offers, clinic pricing, paid transactions, and claims about official brand approval remain evidence-gated.
+
+## Cost-minimizing launch architecture
+
+- Neon remains the persistence provider.
+- Manual payment remains the MVP path; Paymob is optional.
+- Direct WhatsApp contact can be used instead of WhatsApp Cloud API.
+- Meta intake can be deferred.
+- Vercel domain can be used instead of buying a custom domain.
+- No paid builder, automation platform, or API is required for the core inquiry-to-Neon flow.
+- No fake clinic, patient, payment, provider, webhook, or social data is permitted.
+
+## Remaining genuine external gates
+
+1. Real participating clinic evidence is required before representing a specific clinic offer or collecting clinic-linked commercial payment.
+2. Official brand assets are optional for the zero-cost MVP; the current neutral treatment can remain until approved.
+3. Production content approval is optional for the zero-cost MVP.
+4. WhatsApp Cloud API is optional; direct WhatsApp is the zero-cost alternative.
+5. Meta credentials are optional; website intake can launch without Meta.
+6. Custom domain is optional; Vercel domain is sufficient for MVP.
+
+## Security note
+
+The current CI gate intentionally fails only on critical npm audit findings. The latest npm install reports two high-severity advisories:
+- sharp <0.35.5
+- source-map-js <1.2.2
+
+These should be upgraded in the dependency lock when a reproducible lock regeneration path is available. They are not being hidden or marked fixed.
 
 ## Evidence rule
-No provider or production state is marked successful without fresh evidence from the relevant system.
+
+No production/provider state is marked successful without fresh evidence from the relevant system.
