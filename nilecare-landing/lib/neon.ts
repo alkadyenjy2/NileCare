@@ -65,3 +65,16 @@ export async function neonInsert(table:string,data:Record<string,unknown>):Promi
 }
 
 export function isNeonConfigured(){return Boolean(base())}
+
+export async function neonHealthCheck(){
+  try{
+    const result=await query("select current_database() as database,current_schema() as schema",[]);
+    const row=result.rows?.[0]||[];
+    const fields=result.fields||[];
+    const values=Object.fromEntries(row.map((value,index)=>[fields[index]?.name||String(index),value]));
+    return{ready:true as const,database:values.database||null,schema:values.schema||null};
+  }catch(error:any){
+    if(error?.code==="CONFIG")return{ready:false as const,status:"BLOCKED_PERSISTENCE_NOT_CONFIGURED"};
+    return{ready:false as const,status:"PERSISTENCE_PROVIDER_ERROR",provider_status:error?.status};
+  }
+}
