@@ -2,11 +2,11 @@
 
 ## Repository
 Canonical repository: https://github.com/alkadyenjy2/NileCare
-Current main: 071182eaec9e5ef4b26c7cac7ba091b583654393.
+Current main: 0d6560b182cf53f7dcbea696065a78a28e784789.
 Branch: main.
 
 ## Fresh engineering evidence — 2026-10-08
-- GitHub Actions NileCare CI run #130 on current main completed successfully (commit 071182e...).
+- GitHub Actions NileCare CI run #131 on current main completed successfully (commit 0d6560b...).
 - The CI workflow runs npm install, critical npm audit, TypeScript, Next.js production build, the repository test suite, and self-check.
 - The repository test contract verifies the Neon production bootstrap applies the patient inquiry migration; fresh suite evidence is 46/46 PASS and self-check PASS.
 - Next.js is pinned to 16.3.8 with the lockfile aligned; npm audit --audit-level=critical passed.
@@ -17,8 +17,8 @@ Branch: main.
 - Project ID: prj_DBOBAsIt61tjCGb2dji913TMdYvu
 - Repository: alkadyenjy2/NileCare
 - Production branch: main
-- Latest observed production deployment: dpl_2Ucxc1Qrf2Pzx2oU9pbmsjuP6YV3, READY, target production, current main.
-- Latest observed deployment URL: https://nilecare-fzkgacds0-enjy2026.vercel.app
+- Latest observed production deployment: dpl_9b18zYZoABmxtwZ48iQftB46qVfw, READY, target production, current main.
+- Latest observed deployment URL: https://nilecare-pyhnjgmqu-enjy2026.vercel.app
 - Production health was freshly verified at this deployment: HTTP 200 with service=nilecare and status=ok.
 - Current Vercel project metadata shows password protection disabled, SSO protection disabled, and trusted IP protection disabled.
 
