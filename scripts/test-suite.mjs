@@ -30,7 +30,8 @@ assert.equal(verifyPaymobHmac(paymobObj,expectedPaymobHmac),true,"Paymob HMAC mu
 assert.equal(verifyPaymobHmac({obj:paymobObj},expectedPaymobHmac),false,"outer webhook envelope must not be used as the HMAC payload");
 assert.equal(verifyPaymobHmac(paymobObj,expectedPaymobHmac.toUpperCase()),true,"hex HMAC comparison should be case-insensitive");
 if(originalPaymobSecret===undefined)delete process.env.PAYMOB_HMAC_SECRET;else process.env.PAYMOB_HMAC_SECRET=originalPaymobSecret;
-\nconst validBody=await readJsonBody(new Request("https://nilecare.test/api/lead",{method:"POST",body:'{"lead":true}'}));
+
+const validBody=await readJsonBody(new Request("https://nilecare.test/api/lead",{method:"POST",body:'{"lead":true}'}));
 assert.deepEqual(validBody,{ok:true,value:{lead:true}},"valid JSON request body should parse");
 assert.equal(hasJsonContentType(new Request("https://nilecare.test/api/lead",{method:"POST",headers:{"content-type":"application/json; charset=utf-8"},body:"{}"})),true,"JSON with charset should be accepted");
 assert.equal(hasJsonContentType(new Request("https://nilecare.test/api/lead",{method:"POST",headers:{"content-type":"text/plain"},body:"{}"})),false,"non-JSON content type should be rejected");
