@@ -44,6 +44,31 @@ NileCare production defaults to Neon. The provider can be overridden only when e
 
 The Neon adapter uses Neon's SQL-over-HTTP endpoint directly with `fetch`; it does not add an npm dependency. The PostgreSQL schema is defined by the repository migrations under `supabase/` and has been applied to the real Neon production database through the existing GitHub Actions bootstrap workflow.
 
+## Run and verify locally
+
+No secrets and no real database are needed for these steps.
+
+```bash
+cd nilecare-landing && npm ci
+npx tsc --noEmit
+npm run build          # use NODE_ENV=production or leave NODE_ENV unset
+node ../scripts/test-suite.mjs
+node ../scripts/self-check.mjs
+cd ../scripts && npm install
+node persistence-roundtrip.mjs
+```
+
+`scripts/persistence-roundtrip.mjs` runs the real route handlers and the real Neon adapter against a disposable in-process PostgreSQL (PGlite) loaded with `supabase/001` to `003`. It covers: save a lead, read it back, reopen the database and read again; rejected requests write nothing; a failed write is never acknowledged as saved; Paymob and WhatsApp signature gates and duplicate events; internal endpoints that need `NILECARE_WEBHOOK_SECRET`; row level security with no `anon`/`authenticated` access; CRM stage rules. It never touches Neon or any provider.
+
+Note: this script is not yet part of `.github/workflows/ci.yml` (workflow changes were out of scope for that change).
+
+## Environment variables
+
+Copy `nilecare-landing/.env.example` to `.env.local` and fill it in locally. Never commit real values.
+
+- Required for the MVP: `DATABASE_URL` (Neon), `NILECARE_WEBHOOK_SECRET` (protects `/api/offer`, `/api/readiness`, `/api/paymob/intention`).
+- Optional (only when that provider is enabled): Paymob, WhatsApp Cloud API, Meta, Hugging Face, Supabase.
+
 ## External production gates
 
 These cannot be truthfully fabricated:
