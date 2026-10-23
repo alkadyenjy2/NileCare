@@ -36,7 +36,12 @@ export function productionReadiness(request: Request) {
     ...(process.env.NILECARE_LEGAL_REVIEW_APPROVED === "true" ? [] : ["NILECARE_LEGAL_REVIEW_APPROVED=true"]),
     ...(!present("NILECARE_LEGAL_REVIEW_REFERENCE") ? ["NILECARE_LEGAL_REVIEW_REFERENCE"] : []),
   ];
-  const mvpLaunchReady = persistenceReady && webhookReady && legalReviewReady;
+  const clinicPartnerReady = process.env.NILECARE_CLINIC_PARTNER_APPROVED === "true" && present("NILECARE_CLINIC_PARTNER_REFERENCE");
+  const clinicPartnerMissing = [
+    ...(process.env.NILECARE_CLINIC_PARTNER_APPROVED === "true" ? [] : ["NILECARE_CLINIC_PARTNER_APPROVED=true"]),
+    ...(!present("NILECARE_CLINIC_PARTNER_REFERENCE") ? ["NILECARE_CLINIC_PARTNER_REFERENCE"] : []),
+  ];
+  const mvpLaunchReady = persistenceReady && webhookReady && legalReviewReady && clinicPartnerReady;
 
   return {
     status: 200,
@@ -48,6 +53,7 @@ export function productionReadiness(request: Request) {
       persistence: { ready: persistenceReady, missing: persistenceReady ? [] : ["DATABASE_URL"] },
       webhook: { ready: webhookReady, missing: webhookReady ? [] : ["NILECARE_WEBHOOK_SECRET"] },
       legal_review: { ready: legalReviewReady, required: true, missing: legalReviewMissing },
+      clinic_partner: { ready: clinicPartnerReady, required: true, missing: clinicPartnerMissing },
       payment: {
         ready: false,
         mode: "MANUAL_PAYMENT_READY",
