@@ -53,7 +53,7 @@ const checks=[
  [wr,/INVALID_WHATSAPP_JSON/],[pw,/verifyPaymobHmac\(tx,\s*hmac\)/],[pw,/event\.obj/],[pw,/INVALID_PAYMOB_SUCCESS_FLAG/],[pi,/createPaymobIntention/],[pi,/new URL\(request.url\).origin/],[sp,/===\"supabase\"\?\"supabase\":\"neon\"/],
  [d,/full_name/],[d,/preferred_contact_method/],[d,/consent/],[c,/name=\"full_name\"/],[c,/name=\"service_category\"/],[c,/name=\"preferred_contact_method\"/],
  [c,/name=\"message\"/],[c,/name=\"consent\"/],[page,/Cross-border care, coordinated/],[mig,/alter table public\.leads alter column clinic_name drop not null/],[mig,/add column if not exists full_name/],
- [h,/NextResponse/],[h,/status:persistence\.ready/],[h,/persistence/],[r,/mvp_launch_ready/],[r,/OPTIONAL_FOR_MVP/],
+ [h,/NextResponse/],[h,/status:persistence\.ready/],[h,/persistence/],[r,/mvp_launch_ready/],[r,/OPTIONAL_FOR_MVP/],[r,/legalReviewReady/],[r,/mvpLaunchReady\s*=\s*persistenceReady\s*&&\s*webhookReady\s*&&\s*legalReviewReady/],
  [leadRoute,/readJsonBody\(request\)/],[leadRoute,/parsed\.status === 413/],[leadRoute,/validateLead\(parsed\.value\)/]
 ];
 checks.forEach(([value,re],i)=>assert.match(value,re,"check "+(i+1)+" failed"));

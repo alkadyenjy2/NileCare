@@ -11,6 +11,8 @@ The repository has a deterministic lead domain, validation boundary, API contrac
 - Content: the existing 80-post bank is a real repository draft bank, but all 80 entries are `approved:false` and there are currently zero image files. They must not be promoted to approved content without source/approval evidence.
 - Database: Neon is the selected production PostgreSQL provider. A real Neon project is reachable through the existing GitHub Actions credentials, and the NileCare schema was applied and verified there.
 
+## Legal launch gate
+The internal `/api/readiness` endpoint must report `mvp_launch_ready=false` until both `NILECARE_LEGAL_REVIEW_APPROVED=true` and a non-empty `NILECARE_LEGAL_REVIEW_REFERENCE` identify completed, jurisdiction-specific legal/privacy review. Never set these values merely to make the readiness check green. The reference should identify the approved counsel review or document without exposing confidential legal content.
 ## Payment boundary
 Paymob is optional for the MVP. Manual bank transfer/Vodafone Cash-style payment is supported conceptually when a participating clinic supplies real payment details and an authorized operator verifies payment evidence. The CRM must not mark `paid` without evidence.
 
