@@ -31,7 +31,12 @@ export function productionReadiness(request: Request) {
   const contentReady = false;
   const brandReady = false;
   const offerReady = false;
-  const mvpLaunchReady = persistenceReady && webhookReady;
+  const legalReviewReady = process.env.NILECARE_LEGAL_REVIEW_APPROVED === "true" && present("NILECARE_LEGAL_REVIEW_REFERENCE");
+  const legalReviewMissing = [
+    ...(process.env.NILECARE_LEGAL_REVIEW_APPROVED === "true" ? [] : ["NILECARE_LEGAL_REVIEW_APPROVED=true"]),
+    ...(!present("NILECARE_LEGAL_REVIEW_REFERENCE") ? ["NILECARE_LEGAL_REVIEW_REFERENCE"] : []),
+  ];
+  const mvpLaunchReady = persistenceReady && webhookReady && legalReviewReady;
 
   return {
     status: 200,
@@ -42,6 +47,7 @@ export function productionReadiness(request: Request) {
       launch_mode: "ZERO_COST_MVP",
       persistence: { ready: persistenceReady, missing: persistenceReady ? [] : ["DATABASE_URL"] },
       webhook: { ready: webhookReady, missing: webhookReady ? [] : ["NILECARE_WEBHOOK_SECRET"] },
+      legal_review: { ready: legalReviewReady, required: true, missing: legalReviewMissing },
       payment: {
         ready: false,
         mode: "MANUAL_PAYMENT_READY",
