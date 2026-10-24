@@ -1,3 +1,5 @@
+import { buildNeonSqlEndpoint, mapNeonLeadRows } from "./admin-data-core.mjs";
+
 export type AdminLead = {
   id: string; full_name: string | null; email: string | null; phone: string | null;
   whatsapp: string | null; country: string | null; service_category: string | null;
@@ -8,10 +10,9 @@ export type AdminLead = {
 export async function listAdminLeads(): Promise<AdminLead[]> {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) throw new Error("ADMIN_DATABASE_NOT_CONFIGURED");
-  let parsed: URL;
-  try { parsed = new URL(connectionString); } catch { throw new Error("ADMIN_DATABASE_NOT_CONFIGURED"); }
-  if (!parsed.hostname || !parsed.username || !parsed.pathname) throw new Error("ADMIN_DATABASE_NOT_CONFIGURED");
-  const endpoint = "https://" + parsed.hostname + ":" + (parsed.port || "443") + "/sql";
+  let endpoint: string;
+  try { endpoint = buildNeonSqlEndpoint(connectionString); }
+  catch { throw new Error("ADMIN_DATABASE_NOT_CONFIGURED"); }
   const sql = "select id, full_name, email, phone, whatsapp, country, service_category, preferred_contact_method, message, consent, source, stage, created_at from public.leads order by created_at desc limit 200";
   const response = await fetch(endpoint, {
     method: "POST",
@@ -21,9 +22,5 @@ export async function listAdminLeads(): Promise<AdminLead[]> {
   });
   if (!response.ok) throw new Error("ADMIN_DATABASE_QUERY_FAILED");
   const result = await response.json() as { fields?: { name: string }[]; rows?: unknown[][] };
-  const fields = result.fields || [];
-  return (result.rows || []).map((row) => {
-    const item = Object.fromEntries(row.map((value, index) => [fields[index]?.name || String(index), value])) as unknown as AdminLead;
-    return item;
-  });
+  return mapNeonLeadRows(result) as AdminLead[];
 }
