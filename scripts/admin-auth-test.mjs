@@ -19,4 +19,4 @@ assert.equal(verifyAdminSession(token, env.AUTH_SECRET, ["staff@example.test"], 
 assert.equal(verifyAdminSession(token + "x", env.AUTH_SECRET, ["owner@example.test"], now), null);
 assert.equal(verifyAdminSession(token, env.AUTH_SECRET, ["owner@example.test"], now + 8 * 60 * 60 * 1000), null);
 assert.equal(verifyAdminSession("malformed", env.AUTH_SECRET, ["owner@example.test"], now), null);
-console.log("admin auth checks: 10/10 passed");
+console.log("admin auth checks: 11/11 passed");
