@@ -57,4 +57,6 @@ const checks=[
  [leadRoute,/readJsonBody\(request\)/],[leadRoute,/parsed\.status === 413/],[leadRoute,/validateLead\(parsed\.value\)/]
 ];
 checks.forEach(([value,re],i)=>assert.match(value,re,"check "+(i+1)+" failed"));
+assert.match(leadRoute,/ok:\s*false,\s*status:\s*persisted\.status/,"public lead persistence errors must return only a safe status");
+assert.doesNotMatch(leadRoute,/NextResponse\.json\(persisted,\s*\{\s*status\s*\}\)/,"public lead endpoint must not expose provider error details");
 console.log(`NILECARE_TEST_SUITE=${checks.length}/${checks.length} PASS; request-body tests=3/3 PASS`);
