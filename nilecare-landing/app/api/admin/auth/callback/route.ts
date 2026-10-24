@@ -1,5 +1,5 @@
-import { createAdminSession, isAllowedAdminEmail } from "../../../../lib/admin-session.mjs";
-import { ADMIN_SESSION_COOKIE } from "../../../../lib/admin-guard";
+import { createAdminSession, isAllowedAdminEmail } from "../../../../../lib/admin-session.mjs";
+import { ADMIN_SESSION_COOKIE } from "../../../../../lib/admin-guard";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
