@@ -78,3 +78,41 @@ export async function neonHealthCheck(){
     return{ready:false as const,status:"PERSISTENCE_PROVIDER_ERROR",provider_status:error?.status};
   }
 }
+
+
+export type AdminLeadRow = {
+  id: string;
+  full_name: string | null;
+  email: string | null;
+  phone: string | null;
+  country: string | null;
+  service_category: string | null;
+  preferred_contact_method: string | null;
+  stage: string;
+  created_at: string | null;
+  updated_at: string | null;
+};
+
+export async function neonListAdminLeads(): Promise<AdminLeadRow[]> {
+  if (!base()) throw Object.assign(new Error("Persistence is not configured"), { code: "CONFIG" });
+  const result = await query(
+    "select id, full_name, email, phone, country, service_category, preferred_contact_method, stage, created_at, updated_at from public.leads order by created_at desc limit 100",
+    []
+  );
+  const fields = (result.fields || []).map((field) => field.name);
+  return (result.rows || []).map((row) => {
+    const record = Object.fromEntries(row.map((value, index) => [fields[index] || String(index), value]));
+    return {
+      id: String(record.id || ""),
+      full_name: record.full_name == null ? null : String(record.full_name),
+      email: record.email == null ? null : String(record.email),
+      phone: record.phone == null ? null : String(record.phone),
+      country: record.country == null ? null : String(record.country),
+      service_category: record.service_category == null ? null : String(record.service_category),
+      preferred_contact_method: record.preferred_contact_method == null ? null : String(record.preferred_contact_method),
+      stage: String(record.stage || "new"),
+      created_at: record.created_at == null ? null : String(record.created_at),
+      updated_at: record.updated_at == null ? null : String(record.updated_at),
+    };
+  });
+}
