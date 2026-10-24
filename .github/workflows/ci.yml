@@ -27,3 +27,7 @@ jobs:
       - run: npm run build
       - run: node ../scripts/test-suite.mjs
       - run: node ../scripts/self-check.mjs
+      - name: Install isolated persistence test dependencies
+        run: npm install --prefix ../scripts --no-audit --no-fund
+      - name: Test lead persistence, webhook idempotency, and access controls
+        run: node ../scripts/persistence-roundtrip.mjs

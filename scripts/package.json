@@ -1,5 +1,12 @@
 {
   "name": "nilecare-self-check",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "test:persistence": "node persistence-roundtrip.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.11",
+    "esbuild": "0.28.2"
+  }
 }

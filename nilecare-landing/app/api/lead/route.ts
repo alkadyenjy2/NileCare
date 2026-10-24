@@ -20,7 +20,8 @@ export async function POST(request: Request) {
   const persisted = await persistLead(result.value);
   if (!persisted.ok) {
     const status = persisted.status === "BLOCKED_PERSISTENCE_NOT_CONFIGURED" ? 503 : 502;
-    return NextResponse.json(persisted, { status });
+    // Public endpoint: return only the status code. Provider detail (database error text) stays out of the response.
+    return NextResponse.json({ ok: false, status: persisted.status }, { status });
   }
   return NextResponse.json({ ok: true, lead: persisted.data }, { status: 201 });
 }

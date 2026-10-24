@@ -18,7 +18,7 @@ The implementation boundary includes:
 - AI provider abstraction with Hugging Face adapter and deterministic fallback.
 - Content-bank schema/import gate for exactly 80 approved posts with unique images.
 - Brand asset gate using explicit placeholders until official assets are supplied.
-- GitHub Actions verification for typecheck, test suite, build, and self-check.
+- GitHub Actions verification for typecheck, test suite, build, self-check, and isolated persistence/security regression tests.
 
 ## Service model
 
@@ -43,6 +43,29 @@ NileCare production defaults to Neon. The provider can be overridden only when e
 - `DATABASE_URL=<Neon PostgreSQL connection string>` for Neon
 
 The Neon adapter uses Neon's SQL-over-HTTP endpoint directly with `fetch`; it does not add an npm dependency. The PostgreSQL schema is defined by the repository migrations under `supabase/` and has been applied to the real Neon production database through the existing GitHub Actions bootstrap workflow.
+
+## Run and verify locally
+
+No secrets and no real database are needed for these steps.
+
+```bash
+cd nilecare-landing && npm ci
+npx tsc --noEmit
+npm run build          # use NODE_ENV=production or leave NODE_ENV unset
+node ../scripts/test-suite.mjs
+node ../scripts/self-check.mjs
+npm install --prefix ../scripts --no-audit --no-fund
+node ../scripts/persistence-roundtrip.mjs
+```
+
+`scripts/persistence-roundtrip.mjs` runs the real route handlers and the real Neon adapter against a disposable in-process PostgreSQL (PGlite) loaded with `supabase/001` to `003`. It covers: save a lead, read it back, reopen the database and read again; rejected requests write nothing; a failed write is never acknowledged as saved; Paymob and WhatsApp signature gates and duplicate events; internal endpoints that need `NILECARE_WEBHOOK_SECRET`; row level security with no `anon`/`authenticated` privileges; CRM stage rules. It never touches Neon or any provider. GitHub Actions runs this suite on pull requests and pushes to `main`.
+
+## Environment variables
+
+Copy `nilecare-landing/.env.example` to `.env.local` and fill it in locally. Never commit real values.
+
+- Required for the MVP: `DATABASE_URL` (Neon), `NILECARE_WEBHOOK_SECRET` (protects `/api/offer`, `/api/readiness`, `/api/paymob/intention`).
+- Optional (only when that provider is enabled): Paymob, WhatsApp Cloud API, Meta, Hugging Face, Supabase.
 
 ## External production gates
 
