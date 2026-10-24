@@ -30,7 +30,7 @@ try {
   assert.equal(isAllowedAdmin("owner@example.test"), false, "missing allowlist fails closed");
   process.env.NILECARE_ADMIN_SESSION_SECRET = "too-short";
   assert.equal(createSessionToken("owner@example.test", now), null, "weak session secret disables session creation");
-  console.log("NileCare admin auth: 12 checks passed");
+  console.log("NileCare admin auth: 13 checks passed");
 } finally {
   for (const [key, value] of Object.entries(original)) {
     const name = ({ emails: "ADMIN_EMAILS", login: "NILECARE_ADMIN_LOGIN_TOKEN", secret: "NILECARE_ADMIN_SESSION_SECRET" })[key];
