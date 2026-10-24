@@ -26,4 +26,5 @@ jobs:
       - run: npx tsc --noEmit
       - run: npm run build
       - run: node ../scripts/test-suite.mjs
+      - run: node ../scripts/admin-session.test.mjs
       - run: node ../scripts/self-check.mjs
