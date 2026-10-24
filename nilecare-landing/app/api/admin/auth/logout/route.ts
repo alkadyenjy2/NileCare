@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { ADMIN_SESSION_COOKIE } from "../../../../lib/admin-guard";
+import { ADMIN_SESSION_COOKIE } from "../../../../../lib/admin-guard";
 
 export async function POST(request: Request) {
   const origin = request.headers.get("origin");
